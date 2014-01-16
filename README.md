@@ -6,3 +6,4 @@ This is the Event calendar for our class for Jterm. We will be making a event ca
 
 Ruben is here!
 Junha is here!
+MAGIC!
