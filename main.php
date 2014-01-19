@@ -6,6 +6,7 @@
 		<div id = "menu" style = "float:left">
 			<a href ="http://www.cs.middlebury.edu/~gkatsaounis/eventcal/eventinfo.php">Create an Event</a>
 			<a href ="http://www.cs.middlebury.edu/~gkatsaounis/eventcal/search.php" >Search for an Event</a>
+			<a href = "http://www.cs.middlebury.edu/~gkatsaounis/eventcal/signuppage.php"> Sign Up</a>
 		</div>
 
 	</body>

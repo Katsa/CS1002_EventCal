@@ -14,10 +14,7 @@
 		die('Error: ' . mysqli_error($con));
 	}
 
-<<<<<<< HEAD
-=======
 	echo "Event submitted pending approval.";
->>>>>>> 65d56c8d853e4da6ad71f158e54aec179db57ea0
 
 	mysql_close($con)
 	
