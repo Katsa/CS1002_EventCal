@@ -15,8 +15,7 @@
 	}
 
 	echo "Event submitted pending approval.";
-
-	header('Refresh: 5; URL=http://www.cs.middlebury.edu/~gkatsaounis/eventcal/main.php');
+	header('Refresh: 5; URL = http://www.cs.middlebury.edu/~gkatsaounis/CS1002_EventCal/main.php');
 
 	mysql_close($con)
 	
