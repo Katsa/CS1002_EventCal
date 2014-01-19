@@ -5,7 +5,7 @@ function validate() {
 	fm = document.thiForm
 
 	//use validation here to make sure the user entered the information correctly
-	fm.subit()
+	fm.submit()
 }
 </SCRIPT>
 
