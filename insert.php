@@ -16,6 +16,8 @@
 
 	echo "Event submitted pending approval.";
 
+	header('Refresh: 5; URL=http://www.cs.middlebury.edu/~gkatsaounis/eventcal/main.php');
+
 	mysql_close($con)
 	
 	?>
