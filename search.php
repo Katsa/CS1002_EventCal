@@ -2,7 +2,7 @@
 <body>
 <SCRIPT LANGUAGE="javascript">
 function validate() {
-	fm = document.thiForm
+	fm = document.thisForm
 
 	//use validation here to make sure the user entered the information correctly
 	fm.submit()
