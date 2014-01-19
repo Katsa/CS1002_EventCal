@@ -6,7 +6,7 @@
 	
 	$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
 
-	$sql = "INSERT INTO Users (Password, email, First_Name, Last_Name)
+	$sql = "INSERT INTO Users (password, email, first_name, last_name)
 	VALUES
 	('$_POST[password]', '$_POST[email]', '$_POST[first_name]', '$_POST[last_name]')");
 	
