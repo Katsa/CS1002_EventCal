@@ -22,6 +22,6 @@
 		//print result
 		echo $row[$col]."<br>";
 	}
-	mysql_close($con)
+	//mysql_close($con)
 	 	
 	?>

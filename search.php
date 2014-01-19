@@ -17,7 +17,7 @@ function validate() {
 		</select>
 		</p>
 		<p>
-			<input type="button" value="Submit" name"btn_submit" onclick="validate()">
+			<input type="button" value="Submit" name="btm_submit" onclick="validate()">
 		</p>
 	</form>
 </body>
