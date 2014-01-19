@@ -9,8 +9,9 @@ function validate() {
 }
 </SCRIPT>
 
-	<form name="search" method="POST" action="eventinfo.php">
+	<form name="search" method="POST" action="display.php">
 		<p>Select what you would like to search by: <select size="2" name="my_dropdown">
+			<option value="location">Event ID</option>
 			<option value="title">Event Title</option>
 			<option value="location">Location</option>
 		</select>
