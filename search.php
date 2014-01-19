@@ -11,7 +11,7 @@ function validate() {
 
 	<form name="search" method="POST" action="display.php">
 		<p>Select what you would like to search by: <select size="2" name="my_dropdown">
-			<option value="location">eventid</option>
+			<option value="eventid">Event ID</option>
 			<option value="title">event_title</option>
 			<option value="location">location</option>
 		</select>
