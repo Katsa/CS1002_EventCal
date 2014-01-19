@@ -1,3 +1,6 @@
+<html>
+<head>
+
 <?php
 	define('DB_SERVER', 'panther.cs.middlebury.edu');
 	define('DB_USERNAME', 'jcepeda');
@@ -14,9 +17,14 @@
 		die('Error: ' . mysqli_error($con));
 	}
 
-	echo "Event submitted pending approval.";
-	header('Refresh: 5; URL = http://www.cs.middlebury.edu/~gkatsaounis/CS1002_EventCal/main.php');
+	echo "Event submission successful.  Your event is now pending approval.  Your browser will redirect you in 10 seconds.";
+	
 
 	mysql_close($con)
 	
-	?>
+?>
+
+<meta http-equiv="refresh" content="10; URL=http://www.cs.middlebury.edu/~gkatsaounis/CS1002_EventCal/main.php">
+
+</head>
+</html>
