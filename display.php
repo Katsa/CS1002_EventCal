@@ -9,7 +9,7 @@
 	$sql = "SELECT $_POST[my_dropdown] from Events";
 
 	if (!mysqli_query($con, $sql)) {
-		die('Error: ' . mysqli_error($con));
+		die('Error: ' . mysqli_error());
 	}
 	else {
 		//execute the SQL query
