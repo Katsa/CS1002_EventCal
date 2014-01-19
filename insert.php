@@ -15,7 +15,6 @@
 	}
 
 <<<<<<< HEAD
-	echo "Your Event Has Been Submitted For Approval";
 =======
 	echo "Event submitted pending approval.";
 >>>>>>> 65d56c8d853e4da6ad71f158e54aec179db57ea0
