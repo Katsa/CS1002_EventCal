@@ -8,7 +8,7 @@
 			Confirm Password: <input type = "password" name="confirm" required><br>
 			First Name: <input type = "text" name = "first_name" requited><br>
 			Last Name: <input type = "text" name = "last_name" required><br>
-			<input type = "submit" value = "Sign"><br>
+			<input type = "submit" value = "Sign Up"><br>
 
 		</form>
 
