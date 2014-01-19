@@ -6,7 +6,7 @@
 	
 	$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
 
-	$sql = "INSERT INTO Events (Title, Location, Start_Time, End_Time, Waiting_for_Approval, Description)
+	$sql = "INSERT INTO Events (title, location, start_time, end_time, waiting_for_approval, description)
 	VALUES
 	('$_POST[event_name]', '$_POST[location]', '$_POST[start_time]', '$_POST[end_time]', '0', '$_POST[description]')";
 
@@ -14,7 +14,11 @@
 		die('Error: ' . mysqli_error($con));
 	}
 
+<<<<<<< HEAD
 	echo "Your Event Has Been Submitted For Approval";
+=======
+	echo "Event submitted pending approval.";
+>>>>>>> 65d56c8d853e4da6ad71f158e54aec179db57ea0
 
 	mysql_close($con)
 	
