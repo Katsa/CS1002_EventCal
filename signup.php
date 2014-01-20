@@ -5,6 +5,7 @@
 			echo "Passwords do not match";
 		}
 
+
 		else {
 		define('DB_SERVER', 'panther.cs.middlebury.edu');
 		define('DB_USERNAME', 'jcepeda');
@@ -22,6 +23,7 @@
 		}
 
 		echo "Account created";
+	}
 
 		mysql_close($con)
 
