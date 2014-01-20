@@ -2,9 +2,8 @@
 <head>
 	<?php
 		if ($_POST["password"] != $_POST["confirm"]) {
-			echo "Passwords do not match";
-		}
-
+			echo "Passwords dont match";
+			echo htmlspecialchars($_SERVER["PHP_SELF"]);
 
 		else {
 		define('DB_SERVER', 'panther.cs.middlebury.edu');
