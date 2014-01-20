@@ -33,17 +33,27 @@
         </div>
         <!-- /.container -->
     </nav>
-    <div class="top">
-		<h1>Login</h1>
-		<form method = "post" action ="login.php">
-
-			Email: <input type= "text" name = "email" required><br>
-			Password: <input type="password" name="password" required><br>
-			<input type="submit" class="btn btn-primary" value="Login"/>
-			<a href="http://www.cs.middlebury.edu/~gkatsaounis/CS1002_EventCal/templates/signupP.html" class="btn btn-primary">Sign Up</a>
-
-		</form>
-	</div>
+    <div class="col-md-6 col-md-offset-3">
+                <form action = "http://www.cs.middlebury.edu/~gkatsaounis/CS1002_EventCal/login.php" method="post" accept-charset="utf-8" class="form" role="form">   
+                    <legend>Login</legend>
+                        <h4>Login</h4>
+                        <div class="row">
+                            <div class="span4">
+                                <input type="text" name="email" value="" class="form-control input-lg" placeholder="email" required/>
+                            </div>
+                            <div class="">
+                                <input type="password" name="password" value="" class="form-control input-lg" placeholder="Shhhh"  required/>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <button class="btn btn-primary btn-block signup-btn" type="submit">Login</button>
+                            <a href="http://www.cs.middlebury.edu/~gkatsaounis/CS1002_EventCal/templates/signupP.html" class="btn btn-primary btn-block signup-btn">Sign Up</a>
+                        </div>
+                </form>          
+              </div>
+            </div> 
 
 	</body>
 </html>
+
