@@ -10,7 +10,7 @@
 
 		$sql = "INSERT INTO Users (password, email, first_name, last_name)
 		VALUES
-		('$_POST[password]', '$_POST[email]', '$_POST[first_name]', '$_POST[last_name]')");
+		('$_POST[password]', '$_POST[email]', '$_POST[first_name]', '$_POST[last_name]')";
 		
 		if (!mysqli_query($con, $sql)) {
 			die('Error: ' . mysqli_error($con));
