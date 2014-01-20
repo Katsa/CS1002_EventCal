@@ -1,6 +1,7 @@
 <html>
 <head>
 	<?php
+		echo "Test";
 		define('DB_SERVER', 'panther.cs.middlebury.edu');
 		define('DB_USERNAME', 'jcepeda');
 		define('DB_PASSWORD', 'ForRealThough');

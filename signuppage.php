@@ -1,4 +1,7 @@
 <html>
+<head>
+			<link rel="stylesheet" type="text/css" href="http://www.cs.middlebury.edu/~gkatsaounis/CS1002_EventCal/css/bootstrap.css"/>
+</head>
 	<body>
 		<h1> Sign up</h1>
 		<form method = "post" action ="signup.php">
