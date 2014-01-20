@@ -5,6 +5,8 @@
 
 			Email: <input type= "text" name = "email" required><br>
 			Password: <input type="password" name="pessword" required><br>
+			<input type="submit" class="btn btn-primary" value="Login"/>
+
 		</form>
 
 	</body>
