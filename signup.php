@@ -1,14 +1,11 @@
 <html>
 <head>
 	<?php
-<<<<<<< HEAD
 		if ($_POST["password"] != $_POST["confirm"]) {
 			echo "Passwords do not match";
 		}
 
 		else {
-=======
->>>>>>> 0925401b1d592c267f96aa1d3a05b88669c6bc06
 		define('DB_SERVER', 'panther.cs.middlebury.edu');
 		define('DB_USERNAME', 'jcepeda');
 		define('DB_PASSWORD', 'ForRealThough');
