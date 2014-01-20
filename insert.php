@@ -24,7 +24,7 @@
 	
 ?>
 
-<meta http-equiv="refresh" content="10; URL=http://www.cs.middlebury.edu/~gkatsaounis/CS1002_EventCal/main.php">
+<meta http-equiv="refresh" content="10; URL=http://www.cs.middlebury.edu/~gkatsaounis/CS1002_EventCal/main.html">
 
 </head>
 </html>

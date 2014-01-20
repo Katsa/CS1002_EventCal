@@ -1,4 +1,5 @@
 <?php
+	
 	define('DB_SERVER', 'panther.cs.middlebury.edu');
 	define('DB_USERNAME', 'jcepeda');
 	define('DB_PASSWORD', 'ForRealThough');
@@ -9,7 +10,7 @@
 	$sql = "SELECT $_POST[my_dropdown] from Events";
 
 	if (!mysqli_query($con, $sql)) {
-		die('Error: ' . mysqli_error($con));
+		die('Error: ' . mysqli_error());
 	}
 	else {
 		//execute the SQL query
@@ -22,6 +23,6 @@
 		//print result
 		echo $row[$col]."<br>";
 	}
-	mysql_close($con)
+	//mysql_close($con)
 	 	
 	?>
