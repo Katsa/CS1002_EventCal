@@ -1,7 +1,7 @@
 <html>
 <head>
 	<?php
-		if ('$_POST[password]' != '$_POST[confirm]') {
+		if ($_POST["password"] != $_POST["confirm"]) {
 			echo "Passwords do not match";
 		}
 
