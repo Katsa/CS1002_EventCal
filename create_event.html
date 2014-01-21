@@ -41,20 +41,25 @@
                         <h4></h4>
                         <div class="row">
                             <div class="span4">
-                                <input type="text" name="eventname" value="" class="form-control input-lg" placeholder="Event Name" required/>
+                                <input type="text" name="event_name" value="" class="form-control input-lg" placeholder="Event Name" required/>
                             </div>
                             <div class="">
                                 <input type="text" name="location" value="" class="form-control input-lg" placeholder="Where?"  required/>
                             </div>
                         </div>
                         <div>
+                            <div class="">
                             <label>Start Date</label>
+                                <input type = "date" name = "start_date" placeholder="mm/dd/yyyy" required>
+                            <label>Start Time</label>
+                                <input type = "time" name = "start_time" placeholder="hh:mm AM/PM"required>
+                            </div><br>
+
                             <div class="">
-                                <input type = "datetime-local" name = "start_time" required> <br>
-                            </div>
                             <label>End Date</label>
-                            <div class="">
-                                <input type = "datetime-local" name = "end_time" required> <br>
+                                <input type = "date" name = "end_date" placeholder="mm/dd/yyyy" required>
+                            <label>End Time</label>
+                                <input type = "time" name = "end_time" placeholder="hh:mm AM/PM" required> <br>
                             </div>
                         </div>
                         <br>
