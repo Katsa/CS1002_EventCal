@@ -22,12 +22,12 @@
 			echo "Incorrect email or password";
 		}
 		else {
-			echo "Welcome" $_POST[email];
+			echo "Welcome" $_POST["email"];
 		}
 
 		mysql_close($con)
 
 	?>
-	<meta http-equiv = "refresh" content" 3; URL=http://www.cs.middlebury.edu/~gkatsaounis/CS1002_EventCal/main.php">
+	<meta http-equiv = "refresh" content = "3"; URL="main.html">
 </head>
 </html>

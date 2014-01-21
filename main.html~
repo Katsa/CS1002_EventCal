@@ -34,13 +34,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="create_event.html">Create an Event</a>
+                    <li><a href="templates/create_event.html">Create an Event</a>
                     </li>
                     <li>
-                        <a href="search.html">Search</a>
+                        <a href="templates/search.php">Search</a>
                     </li>
                     <li>
-                      <a href="login.html" class="btn-login">Login</a>
+                      <a href="templates/loginpage.php" class="btn-login">Login</a>
                     </li>
                 </ul>
             </div>
