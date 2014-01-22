@@ -27,3 +27,6 @@ html, body {
 footer {
 	margin: 50px 0;
 }
+.login {
+    text-align:right;
+}
