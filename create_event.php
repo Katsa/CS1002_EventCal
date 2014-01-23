@@ -24,7 +24,7 @@
 	
 ?>
 
-<meta http-equiv="refresh" content="3; URL=main.html">
+<meta http-equiv="refresh" content="3; URL=main.php">
 
 </head>
 </html>
