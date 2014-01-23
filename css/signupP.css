@@ -69,6 +69,9 @@ legend{
   .top {
     margin-top:50px;
   }
-  .des {
-    width:50px;
+  .desc {
+    min-width: 300px;
+  }
+  .title {
+    min-width: 150px;
   }

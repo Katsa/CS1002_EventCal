@@ -1,3 +1,4 @@
+<html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/signupP.css" />
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -29,11 +30,9 @@
                             <button type="submit" class="btn btn-default">Submit</button>
                          </form>
                      </li>
-                     <li>
-                        <a href="search.html">Advanced Search</a>
+                    <li><a href="search.html">Advanced Search</a>
                     </li>
-                    <li>
-                        <a href="login.html" class="btn-login login">Login</a>
+                    <li><a href="login.html" class="btn-login">Login</a>
                     </li>
                     <li>
                         <a href="approve.php">Approve</a>
@@ -44,12 +43,12 @@
         </div>
         <!-- /.container -->
     </nav>
-</body>
 
-<div class="container top" id="wrap">
-	  <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <form action="signup.php" method="post" accept-charset="utf-8" class="form" role="form">   <legend>Sign Up</legend>
+
+    <div class="container top" id="wrap">
+	    <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form action="edit.php" method="post" accept-charset="utf-8" class="form" role="form">   <legend>Edit Profile</legend>
                     <h4></h4>
                     <div class="row">
                         <div class="col-xs-6 col-md-6">
@@ -59,14 +58,14 @@
                             <input type="text" name="last_name" value="" class="form-control input-lg" placeholder="Last Name"  />
                         </div>
                     </div>
-
                     <input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email"  />
                     <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  />
                     <input type="password" name="confirm" value="" class="form-control input-lg" placeholder="Confirm Password"  />
-                    <button class="btn btn-primary" type="submit">
-                        Create my account</button>
-            </form>          
-          </div>
-</div>            
-</div>
-</div>
+                    <h4>Organisazions Stared:</h4>
+                    <button class="btn btn-primary" type="submit">Submit Changes</button>
+                </form>          
+            </div>
+        </div>            
+    </div>
+</body>
+</html>
