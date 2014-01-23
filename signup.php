@@ -73,9 +73,9 @@
                         </div>
                     </div>
 
-                    <input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email"  />
-                    <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  />
-                    <input type="password" name="confirm" value="" class="form-control input-lg" placeholder="Confirm Password"  />
+                    <input type="text" name="email" class="form-control input-lg" placeholder="Your Email"  />
+                    <input type="password" name="password" class="form-control input-lg" placeholder="Password"  />
+                    <input type="password" name="confirm" class="form-control input-lg" placeholder="Confirm Password"  />
                     <button class="btn btn-primary" type="submit">Create my account</button>
             </form>          
           </div>
@@ -131,22 +131,20 @@
                 } 
                 //If there are no errors
                 if(empty($errors)){
-                //encrypt the password
+                    //encrypt the password
                     $encrypted_txt = encrypt_decrypt('encrypt', $password);
                     //$decrypted_txt = encrypt_decrypt('decrypt', $encrypted_txt);
-                    }
-                   
-
                     $sql = "INSERT INTO Users (password, email, first_name, last_name) VALUES ('$encrypted_txt', '$_POST[email]', '$_POST[first_name]', '$_POST[last_name]')";
-            
-                if (!mysqli_query($con, $sql)) {
-                    die('Error: ' . mysqli_error($con));
-                    }
-                    else {
-                        echo "Account created";
+                    if (!mysqli_query($con, $sql)) {
+                        die('Error: ' . mysqli_error($con));
+                        }
+                        else {
+                            echo "Account created";
+                        }
                     }
                 
-                mysql_close($con)
+                
+                mysql_close($con);
 
             ?>
 </div>            
