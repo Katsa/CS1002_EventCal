@@ -34,7 +34,7 @@
                     }
                 }
             }
-            $sql = "UPDATE Events SET waiting_for_approval = 1 WHERE eventid = $event_id;";
+            $sql = "UPDATE Events SET waiting_for_approval = 0 WHERE eventid = $event_id;";
         }
 
         //if delete
@@ -50,7 +50,7 @@
     }
 
     //create table
-    $sql = "SELECT title, location, start_time, start_date, end_time, end_date, edit, description, eventid FROM Events WHERE waiting_for_approval = '0'";
+    $sql = "SELECT title, location, start_time, start_date, end_time, end_date, edit, description, eventid FROM Events WHERE waiting_for_approval = '1'";
 
     if (!mysqli_query($con, $sql)) {
         die('Error: ' . mysqli_error());
@@ -138,7 +138,7 @@
                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", "$row[start_time]"); ?> </td>
                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", "$row[end_time]"); ?> </td>
-                <td> <?php if ($row[edit] == 1) { echo "New Event"; } else { echo "Edit"; } ?>
+                <td> <?php if ($row[edit] == 0) { echo "New Event"; } else { echo "Edit"; } ?>
                 <td class = "desc"> <?php echo "$row[description]"; ?> </td>
                 <td nowrap class="text-center">
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
