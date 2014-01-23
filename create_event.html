@@ -22,7 +22,15 @@
                     <ul class="nav navbar-nav">
                         <li><a href="create_event.html">Create an Event</a>
                         </li>
-                        <li><a href="search.html">Search</a>
+                        <li>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                         </form>
+                     </li>
+                        <li><a href="search.html">Advanced Search</a>
                         </li>
                         <li><a href="login.html" class="btn-login">Login</a>
                         </li>
@@ -52,14 +60,14 @@
                             <label>Start Date</label>
                                 <input type = "date" name = "start_date" placeholder="mm/dd/yyyy" required>
                             <label>Start Time</label>
-                                <input type = "time" name = "start_time" placeholder="hh:mm AM/PM"required>
+                                <input type = "time" name = "start_time" placeholder="--:-- --"required>
                             </div><br>
 
                             <div class="">
                             <label>End Date</label>
                                 <input type = "date" name = "end_date" placeholder="mm/dd/yyyy" required>
                             <label>End Time</label>
-                                <input type = "time" name = "end_time" placeholder="hh:mm AM/PM" required> <br>
+                                <input type = "time" name = "end_time" placeholder="--:-- --" required> <br>
                             </div>
                         </div>
                         <br>
