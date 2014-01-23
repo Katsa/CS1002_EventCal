@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 <?php   
     define('DB_SERVER', 'panther.cs.middlebury.edu');
@@ -8,7 +9,7 @@
     $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
 
     //if submission
-    if ($_POST[id] != NULL) {
+    if (isset($_POST[id])) {
         $event_id = substr($_POST[id], 1);
 
         //if approve
@@ -19,19 +20,17 @@
             }
             else {
                 $result = mysqli_query($con, $sql);
+                $row = mysqli_fetch_array($result);
             }
 
-            while($row = mysqli_fetch_array($result)) {
-
-                //if edit
-                if ($row[original_version] != 0) {
-                    $sql = "DELETE FROM Events WHERE eventid = $row[original_version];";
-                    if (!mysqli_query($con, $sql)) {
-                        die('Error: ' . mysqli_error());
-                    }
-                    else {
-                        mysqli_query($con, $sql);
-                    }
+            //if edit
+            if ($row[original_version] != 0) {
+                $sql = "DELETE FROM Events WHERE eventid = $row[original_version];";
+                if (!mysqli_query($con, $sql)) {
+                    die('Error: ' . mysqli_error());
+                }
+                else {
+                    mysqli_query($con, $sql);
                 }
             }
             $sql = "UPDATE Events SET waiting_for_approval = 0 WHERE eventid = $event_id;";
@@ -89,10 +88,8 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                     <li><a href="create_event.html">Create an Event</a>
-                    </li>
+             <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav row">
                     <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <b class=""></b></a>
                     <ul class="dropdown-menu" style="">
@@ -117,12 +114,17 @@
                         </li>
                     </ul>
                 </li>
-                    <li>
-                        <a href="login.html" class="btn-login login">Login</a>
-                    </li>
-                    <li>
-                        <a href="approve.php">Approve</a>
-                    </li>
+                <?php  
+                    if($_SESSION["email"] != "") {
+                        echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li>';
+                    }
+                    else {
+                        echo '<li><a href="login.php" class="btn-login login">Login</a> </li>';
+                    }
+                    if ($_SESSION["admin"] == "1") {
+                        echo '<li><a href="approve.php">Approve</a> </li>';
+                    }
+                ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

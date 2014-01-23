@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,9 +36,6 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav row">
-                    <li>
-                        <a href="create_event.html">Create an Event</a>
-                    </li>
                     <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <b class=""></b></a>
                     <ul class="dropdown-menu" style="">
@@ -62,12 +60,17 @@
                         </li>
                     </ul>
                 </li>
-                    <li>
-                        <a href="login.html" class="btn-login login">Login</a>
-                    </li>
-                    <li>
-                        <a href="approve.php">Approve</a>
-                    </li>
+                <?php  
+                    if($_SESSION["email"] != "") {
+                        echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li>';
+                    }
+                    else {
+                        echo '<li><a href="login.php" class="btn-login login">Login</a> </li>';
+                    }
+                    if ($_SESSION["admin"] == "1") {
+                        echo '<li><a href="approve.php">Approve</a> </li>';
+                    }
+                ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
