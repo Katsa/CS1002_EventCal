@@ -39,15 +39,25 @@ function validate() {
          <!-- Collect the nav links, forms, and other content for toggling -->
          <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-               <li>
-                  <a href="create_event.html">Create an Event</a>
-               </li>
-               <li>
-                  <a href="search.html">Search</a>
-               </li>
-               <li>
-                  <a href="login.html" class="btn-login">Login</a>
-               </li>
+                <li><a href="create_event.html">Create an Event</a>
+                </li>
+                <li>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                     </form>
+                 </li>
+                 <li>
+                    <a href="search.html">Advanced Search</a>
+                </li>
+                 <li>
+                    <a href="login.html" class="btn-login login">Login</a>
+                </li>
+                <li>                      
+                    <a href="approve.php">Approve</a>
+                </li>
             </ul>
          </div>
          <!-- /.navbar-collapse -->
@@ -55,21 +65,7 @@ function validate() {
       <!-- /.container -->
    </nav>
 </div>
-<<<<<<< HEAD
-<div class="top">
-   <form name="thisForm" method="POST" action="search.php">
-      <p>Select what you would like to search by: <select size="2" name="my_dropdown">
-         <option value="eventid">Event ID</option>
-         <option value="title">Event Title</option>
-         <option value="location">Location</option>
-      </select>
-      </p>
-      <p>
-         <input type="button" value="Submit" name="btm_submit" onclick="validate()">
-      </p>
-   </form> 
-</div>
-=======
+
   <br>
 <div class="container">   
     <div class="row">
@@ -132,50 +128,5 @@ function validate() {
     </div>
   </div>
 
->>>>>>> 5125081692bdbdf0ee08d644754375ff1ed2e83d
 </body>
 </html>
-
-<!-- 
-   -->
-
-   <!-- 
-   <ul class="nav nav-tabs" id="myTab">
-  <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-  <li><a href="#profile" data-toggle="tab">Profile</a></li>
-  <li><a href="#messages" data-toggle="tab">Messages</a></li>
-  <li><a href="#settings" data-toggle="tab">Settings</a></li>
-</ul>
-   <div class="tab-content">
-     <div class="tab-pane face in active" id="home">.1..</div>
-     <div class="tab-pane fade" id="profile">..2.</div>
-     <div class="tab-pane fade" id="messages">.3..</div>
-     <div class="tab-pane fade" id="settings">.4..</div>
-   </div>
-   <script>
-      $(function () {
-         $('#myTab a:last').tab('show')
-      })
-      $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-         e.target // activated tab
-         e.relatedTarget // previous tab
-      })
-      </script>
-
-<div class="top">
-   <form name="thisForm" method="POST" action="signup.php">
-      <p>Select what you would like to search by: <select size="2" name="my_dropdown">
-         <option value="eventid">Event ID</option>
-         <option value="title">event_title</option>
-         <option value="location">location</option>
-      </select>
-      </p>
-      <p>
-         <input type="button" value="Submit" name="btm_submit" onclick="validate()">
-      </p>
-   </form> 
-</div>
-
-
-
-   -->
