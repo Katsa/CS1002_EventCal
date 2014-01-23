@@ -7,12 +7,37 @@
     
     $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
 
-    //Approves event or Deletes Event if submitted
+    //if submission
     if ($_POST[id] != NULL) {
         $event_id = substr($_POST[id], 1);
+
+        //if approve
         if (substr($_POST[id], 0, 1) == 1) {
+            $sql = "SELECT original_version FROM Events WHERE eventid = $event_id;";
+            if (!mysqli_query($con, $sql)) {
+                die('Error: ' . mysqli_error());
+            }
+            else {
+                $result = mysqli_query($con, $sql);
+            }
+
+            while($row = mysqli_fetch_array($result)) {
+
+                //if edit
+                if ($row[original_version] != 0) {
+                    $sql = "DELETE FROM Events WHERE eventid = $row[original_version];";
+                    if (!mysqli_query($con, $sql)) {
+                        die('Error: ' . mysqli_error());
+                    }
+                    else {
+                        mysqli_query($con, $sql);
+                    }
+                }
+            }
             $sql = "UPDATE Events SET waiting_for_approval = 1 WHERE eventid = $event_id;";
         }
+
+        //if delete
         else
             $sql = "DELETE FROM Events WHERE eventid = $event_id;";
         
@@ -20,10 +45,11 @@
             die('Error: ' . mysqli_error());
         }
         else {
-            //execute the SQL query
-            $result = mysqli_query($con, $sql);
+            mysqli_query($con, $sql);
         }    
     }
+
+    //create table
 
     $sql = "SELECT title, location, start_time, start_date, end_time, end_date, edit, description, eventid FROM Events WHERE waiting_for_approval = '0'";
 
@@ -31,7 +57,6 @@
         die('Error: ' . mysqli_error());
     }
     else {
-        //execute the SQL query
         $result = mysqli_query($con, $sql);
     }    
 ?>
