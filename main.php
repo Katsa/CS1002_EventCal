@@ -29,13 +29,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="main.html">MiddLife</a>
+                <a class="navbar-brand" href="main.php">MiddLife</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav row">
-                    <li><a href="create_event.html">Create an Event</a>
+                    <li>
+                        <a href="create_event.html">Create an Event</a>
                     </li>
                     <li>
                         <form class="navbar-form navbar-left" role="search">
@@ -44,12 +45,15 @@
                             </div>
                             <button type="submit" class="btn btn-default">Submit</button>
                          </form>
-                     </li>
-                     <li>
+                    </li>
+                    <li>
                         <a href="search.html">Advanced Search</a>
                     </li>
                     <li>
                         <a href="login.html" class="btn-login login">Login</a>
+                    </li>
+                    <li>
+                        <a href="approve.php">Approve</a>
                     </li>
                 </ul>
             </div>
@@ -75,43 +79,43 @@
             <div class="item active">
                 <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
                 <div class="carousel-caption">
-                    <h1>Caption 1</h1>
+                    <h1><?php echo date('l, F j, Y'); ?></h1>
                 </div>
             </div>
             <div class="item">
                 <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
                 <div class="carousel-caption">
-                    <h1>Caption 2</h1>
+                    <h1><?php $date  = mktime(0, 0, 0, date("m")  , date("d")+1, date("Y")); echo date('l, F j, Y', $date); ?></h1>
                 </div>
             </div>
             <div class="item">
                 <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
                 <div class="carousel-caption">
-                    <h1>Caption 3</h1>
+                    <h1><?php $date  = mktime(0, 0, 0, date("m")  , date("d")+2, date("Y")); echo date('l, F j, Y', $date); ?></h1>
                 </div>
             </div>
             <div class="item">
                 <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Four');"></div>
                 <div class="carousel-caption">
-                    <h1>Caption 4</h1>
+                    <h1><?php $date  = mktime(0, 0, 0, date("m")  , date("d")+3, date("Y")); echo date('l, F j, Y', $date); ?></h1>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Fiver');"></div>
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Five');"></div>
                 <div class="carousel-caption">
-                    <h1>Caption 5</h1>
+                    <h1><?php $date  = mktime(0, 0, 0, date("m")  , date("d")+4, date("Y")); echo date('l, F j, Y', $date); ?></h1>
                 </div>
             </div>
                         <div class="item">
                 <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Six');"></div>
                 <div class="carousel-caption">
-                    <h1>Caption 6</h1>
+                    <h1><?php $date  = mktime(0, 0, 0, date("m")  , date("d")+5, date("Y")); echo date('l, F j, Y', $date); ?></h1>
                 </div>
             </div>
             <div class="item">
                 <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Seven');"></div>
                 <div class="carousel-caption">
-                    <h1>Caption 7</h1>
+                    <h1><?php $date  = mktime(0, 0, 0, date("m")  , date("d")+6, date("Y")); echo date('l, F j, Y', $date); ?></h1>
                 </div>
             </div>            
         </div>
@@ -125,36 +129,6 @@
         </a>
     </div>
 
-    <div class="container">
-
-        <div class="row section">
-            <div class="col-lg-12">
-                <h1>A Full Width Image Slider Template</h1>
-                <p>This is a great starting point for yet another modern and stylish website. Here are some things to consider when working with this template:</p>
-                <ul>
-                    <li>Unique Fonts</li>
-                    <li>Attractive Colors</li>
-                    <li>Content Spacing for Legibility and Design</li>
-                    <li>Decent Pictures that Still Load Quickly (less than 400KB for example)</li>
-                    <li>Make the Pictures INFORMATIVE</li>
-                    <li>Custom Styling for the Captions</li>
-                </ul>
-            </div>
-        </div>
-
-        <hr>
-
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Company 2013</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-    <!-- /.container -->
-
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
@@ -162,10 +136,9 @@
     <!-- Script to Activate the Carousel -->
     <script>
     $('.carousel').carousel({
-        interval: 000 //changes the speed
+        interval: 0000 //changes the speed
     })
     </script>
 </body>
 
 </html>
-\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00
