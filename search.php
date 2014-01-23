@@ -1,24 +1,28 @@
-<html>
-<body>
-<SCRIPT LANGUAGE="javascript">
-function validate() {
-	fm = document.thiForm
+<?php
+	
+	define('DB_SERVER', 'panther.cs.middlebury.edu');
+	define('DB_USERNAME', 'jcepeda');
+	define('DB_PASSWORD', 'ForRealThough');
+	define('DB_DATABASE', 'jcepeda_middCal');
+	
+	$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
 
-	//use validation here to make sure the user entered the information correctly
-	fm.subit()
-}
-</SCRIPT>
+	$sql = "SELECT $_POST[my_dropdown] from Events";
 
-	<form name="search" method="POST" action="display.php">
-		<p>Select what you would like to search by: <select size="2" name="my_dropdown">
-			<option value="location">eventid</option>
-			<option value="title">event_title</option>
-			<option value="location">location</option>
-		</select>
-		</p>
-		<p>
-			<input type="button" value="Submit" name"btn_submit" onclick="validate()">
-		</p>
-	</form>
-</body>
-</html>
+	if (!mysqli_query($con, $sql)) {
+		die('Error: ' . mysqli_error());
+	}
+	else {
+		//execute the SQL query
+		$result = mysqli_query($con, $sql);
+	}
+
+	$col = $_POST[my_dropdown];
+	echo $col.":<br>";
+	while($row = mysqli_fetch_array($result)) {
+		//print result
+		echo $row[$col]."<br>";
+	}
+	//mysql_close($con)
+	 	
+	?>
