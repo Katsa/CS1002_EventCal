@@ -54,7 +54,7 @@
 			$_SESSION["name"] = $row[first_name] . " " . $row[last_name];
 			$_SESSION["admin"] = $row[admin];
 		}
-		else { //fix placement
+	 else { //fix placement
 			echo "<br><br><br>Login Failed";
 		}
 	}

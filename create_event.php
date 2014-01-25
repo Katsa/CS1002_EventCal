@@ -1,26 +1,29 @@
 <?php session_start(); ?>
 <html>
 <?php
-	define('DB_SERVER', 'panther.cs.middlebury.edu');
-	define('DB_USERNAME', 'jcepeda');
-	define('DB_PASSWORD', 'ForRealThough');
-	define('DB_DATABASE', 'jcepeda_middCal');
-	
-	$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
+        define('DB_SERVER', 'panther.cs.middlebury.edu');
+    	define('DB_USERNAME', 'jcepeda');
+    	define('DB_PASSWORD', 'ForRealThough');
+    	define('DB_DATABASE', 'jcepeda_middCal');
+    	
+    	$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
+    if (isset($_POST[submit])) {
+    	$sql = "INSERT INTO Events (title, location, start_date, end_date, start_time, end_time, waiting_for_approval, description, edit)
+    	VALUES
+    	('$_POST[event_name]', '$_POST[location]', '$_POST[start_date]', '$_POST[end_date]', '$_POST[start_time]', '$_POST[end_time]', '1', '$_POST[description]', '0')";
 
-	$sql = "INSERT INTO Events (title, location, start_date, end_date, start_time, end_time, waiting_for_approval, description, edit)
-	VALUES
-	('$_POST[event_name]', '$_POST[location]', '$_POST[start_date]', '$_POST[end_date]', '$_POST[start_time]', '$_POST[end_time]', '1', '$_POST[description]', '0')";
+    	if (!mysqli_query($con, $sql)) {
+    		die('Error: ' . mysqli_error($con));
+    	}
+        $now = date("Y-m-d H:i:s");
+    	$sql = "INSERT INTO CREATED_BY (email, time_of_creation) VALUES ('$_SESSION[email]', '$now')";
 
-	if (!mysqli_query($con, $sql)) {
-		die('Error: ' . mysqli_error($con));
-	}
+        if (!mysqli_query($con, $sql)) {
+            die('Error: ' . mysqli_error($con));
+        }
 
-	echo "Event submission successful.";
-	
-
-	mysql_close($con);
-	
+    }
+    	mysql_close($con);
 ?>
 
 <head>
@@ -99,7 +102,7 @@
     <div class="container top" id="wrap">
     	  <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <form action = "#" method="post" accept-charset="utf-8" class="form" role="form">   
+                <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post" accept-charset="utf-8" class="form" role="form">   
                     <legend>Create Event</legend>
                         <h4></h4>
                         <div class="row">
@@ -129,8 +132,7 @@
                         <div class="">
                             <textarea class="form-control input-lg" name = "description" rows = "5" cols="40" placeholder="Event Description"></textarea><br>
                         </div>
-                        <button class="btn  btn-primary " type="submit">
-                            Submit Event</button>
+                        <button class="btn  btn-primary " type="submit" name="submit">Submit Event</button>
                 </form>          
               </div>
             </div>            

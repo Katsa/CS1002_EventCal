@@ -56,7 +56,7 @@
     }
     else {
         $result = mysqli_query($con, $sql);
-    }    
+    }
 ?>
 
 <head>
@@ -137,6 +137,7 @@
         <tr>
             <th>Title</th>
             <th>Location</th>
+            <th>Created By</th>
             <th>Start Time</th>
             <th>End Time</th>
             <th nowrap>New Event/Edit</th>
@@ -144,10 +145,29 @@
             <th class="text-center">Action</th>
         </tr>
     </thead>
-            <?php while($row = mysqli_fetch_array($result)) { ?>
+            <?php while($row = mysqli_fetch_array($result)) { 
+                $sql = "SELECT email, time_of_creation FROM CREATED_BY WHERE eventid = '$row[eventid]';";
+
+                if (!mysqli_query($con, $sql)) {
+                    die('Error: ' . mysqli_error());
+                }
+                else {
+                    $created = mysqli_query($con, $sql);
+                    $createdi = mysqli_fetch_array($created);
+                }
+                $sql = "SELECT first_name, last_name FROM Users WHERE email = '$createdi[email]';";
+                if (!mysqli_query($con, $sql)) {
+                    die('Error: ' . mysqli_error());
+                }
+                else {
+                    $user = mysqli_query($con, $sql);
+                    $useri = mysqli_fetch_array($user);
+                }
+                ?>
             <tr>
                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
+                <td> <?php echo "$useri[first_name] $useri[last_name] <br> $createdi[email]"; ?> </td>
                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", "$row[start_time]"); ?> </td>
                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", "$row[end_time]"); ?> </td>
                 <td> <?php if ($row[edit] == 0) { echo "New Event"; } else { echo "Edit"; } ?>
