@@ -1,4 +1,24 @@
-<?php session_start(); ?>
+<?php session_start();
+    define('DB_SERVER', 'panther.cs.middlebury.edu');
+    define('DB_USERNAME', 'jcepeda');
+    define('DB_PASSWORD', 'ForRealThough');
+    define('DB_DATABASE', 'jcepeda_middCal');
+        
+    $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
+
+    $nextWeek = time() + (7 * 24 * 60 * 60);
+    $now = date('Y-m-d');
+    $nextWeek = date('Y-m-d', strtotime('+6 day'));
+    //$sql = "SELECT title, location FROM Events WHERE waiting_for_approval = '1' AND start_date BETWEEN '$now' AND '$nextWeek';";
+    $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time FROM Events WHERE waiting_for_approval = '0' AND start_date BETWEEN '2014-1-25' AND '2014-1-31' ORDER BY start_date ASC, start_time ASC";
+    if (!mysqli_query($con, $sql)) {
+        die('Error: ' . mysqli_error($con));
+    }
+    else {
+        $result = mysqli_query($con, $sql);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,11 +110,34 @@
         </ol>
 
         <!-- Wrapper for slides -->
+
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
-                <div class="carousel-caption">
-                    <h1><?php echo date('l, F j, Y'); ?></h1>
+                <div class ="main">
+                    <div class="container">
+                        <table class="table table-striped custab">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Location</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                            <?php while($row = mysqli_fetch_array($result)) {
+                            ?>
+                            <tr>
+                                <td class = "title"> <?php echo "$row[title]"; ?> </td>
+                                <td class = "title"> <?php echo "$row[location]"; ?> </td>
+                                <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
+                                <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
+                                <td class = "desc"> <?php echo "$row[description]"; ?> </td>
+                            </tr>
+                            <?php } mysql_close($con); ?>
+
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="item">
