@@ -125,15 +125,22 @@
 <script language="javascript">
 function validate(form) {
 var e = form.elements;
+var middCheck = e['email'].value;
+var middValue = middCheck.search("@");
 
 /* Your validation code. */
+if(middCheck.substr(middValue) != "@middlebury.edu") {
+    alert('Please enter a middlebury email!');
+    return false;
+}
 
 if(e['password'].value != e['confirm'].value) {
-alert('Your passwords do not match.');
+alert('Your passwords do not match!');
 return false;
 }
 return true;
 }
+
 </script>
 
 <div class="container top" id="wrap">
