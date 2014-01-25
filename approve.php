@@ -174,9 +174,9 @@ if(!isset($_SESSION['admin']) || (isset($_SESSION['admin']) && $_SESSION['admin'
         <tr>
             <td class = "title"> <?php echo "$row[title]"; ?> </td>
             <td class = "title"> <?php echo "$row[location]"; ?> </td>
-            <td> <?php echo "$useri[first_name] $useri[last_name] <br> $createdi[email]"; ?> </td>
-            <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", "$row[start_time]"); ?> </td>
-            <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", "$row[end_time]"); ?> </td>
+            <td nowrap> <?php echo "$useri[first_name] $useri[last_name] <br> $createdi[email]"; ?> </td>
+            <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
+            <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
             <td> <?php if ($row[edit] == 0) { echo "New Event"; } else { echo "Edit"; } ?>
             <td class = "desc"> <?php echo "$row[description]"; ?> </td>
             <td nowrap class="text-center">
