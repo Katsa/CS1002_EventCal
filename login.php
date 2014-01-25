@@ -66,7 +66,7 @@
 
 ?>
 <html>
-        <head>
+    <head>
       <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
       <link href="css/bootstrap.css" rel="stylesheet">
       <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
