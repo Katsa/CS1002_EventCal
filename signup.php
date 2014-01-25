@@ -34,7 +34,7 @@
         //encrypt the password
         $encrypted_txt = encrypt_decrypt('encrypt', $password);
         //$decrypted_txt = encrypt_decrypt('decrypt', $encrypted_txt);
-        $sql = "INSERT INTO Users (password, email, first_name, last_name) VALUES ('$encrypted_txt', '$_POST[email]', '$_POST[first_name]', '$_POST[last_name]')";
+        $sql = "INSERT INTO Users (password, email, first_name, last_name, verified) VALUES ('$encrypted_txt', '$_POST[email]', '$_POST[first_name]', '$_POST[last_name]', '0')";
         if (!mysqli_query($con, $sql)) {
             die('Error: ' . mysqli_error($con));
         }
@@ -130,8 +130,8 @@ var middValue = middCheck.search("@");
 
 /* Your validation code. */
 if(middCheck.substr(middValue) != "@middlebury.edu") {
-    alert('Please enter a middlebury email!');
-    return false;
+alert('Please enter a Middlebury email!');
+return false;
 }
 
 if(e['password'].value != e['confirm'].value) {
