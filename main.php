@@ -59,9 +59,6 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <br>
-                </li>
                 <?php  
                     if($_SESSION["email"] != "") { //if logged in
                         echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li>';

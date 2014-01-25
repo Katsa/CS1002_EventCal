@@ -130,8 +130,8 @@ var middValue = middCheck.search("@");
 
 /* Your validation code. */
 if(middCheck.substr(middValue) != "@middlebury.edu") {
-    alert('Please enter a middlebury email!');
-    return false;
+alert('Please enter a Middlebury email!');
+return false;
 }
 
 if(e['password'].value != e['confirm'].value) {
