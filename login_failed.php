@@ -47,7 +47,7 @@
             $decrypted_txt = encrypt_decrypt('decrypt', $fetchedpass);
                if ($decrypted_txt === $password) {
             if ($row[verified] == '0') {
-                echo "<br><br><br>Verify your account!";
+                header("Location: login_notver.php");
             }
                         else {
                 session_start();
