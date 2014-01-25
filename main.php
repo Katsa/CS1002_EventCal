@@ -37,43 +37,45 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav row">
                     <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <b class=""></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <b class=""></b></a>
                     <ul class="dropdown-menu" style="">
-                      <li>
+                        <li>
                             <div class="row">
                                 <div class="col-md-12">
                                     <form class="navbar-form navbar-left" role="search">
-                                    <div class="input-group">
+                                        <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Search" />
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-primary" type="button">
-                                                Go!</button>
-                                        </span>
-                                    </div>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-primary" type="button">Go!</button>
+                                            </span>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </li>
                         <br>
                         <li>
-                          <a href="search.html">Advanced Search</a>
+                            <a href="search.html">Advanced Search</a>
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <br>
+                </li>
                 <?php  
-                    if($_SESSION["email"] != "") {
+                    if($_SESSION["email"] != "") { //if logged in
                         echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li>';
                     }
-                    else {
+                    else { //if not logged in
                         echo '<li><a href="login.php" class="btn-login login">Login</a> </li>';
                     }
-                    if ($_SESSION["admin"] == "1") {
+                    if ($_SESSION["admin"] == "1") { //if admin
                         echo '<li><a href="approve.php">Approve</a> </li>';
                     }
                 ?>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+                <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>

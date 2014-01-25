@@ -1,13 +1,20 @@
-<?php session_start(); ?>
-<html>
-<?php
-        define('DB_SERVER', 'panther.cs.middlebury.edu');
-    	define('DB_USERNAME', 'jcepeda');
-    	define('DB_PASSWORD', 'ForRealThough');
-    	define('DB_DATABASE', 'jcepeda_middCal');
+<?php session_start();
+
+    if(!isset($_SESSION['email']))
+    {
+       die('You cannot directly access this page!'); // kill the page display error
+    }
+
+    define('DB_SERVER', 'panther.cs.middlebury.edu');
+	define('DB_USERNAME', 'jcepeda');
+   	define('DB_PASSWORD', 'ForRealThough');
+   	define('DB_DATABASE', 'jcepeda_middCal');
     	
-    	$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
-    if (isset($_POST[submit])) {
+   	$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
+
+    if (isset($_POST[submit])) {//if form was submitted
+
+        //insert into events
     	$sql = "INSERT INTO Events (title, location, start_date, end_date, start_time, end_time, waiting_for_approval, description, edit)
     	VALUES
     	('$_POST[event_name]', '$_POST[location]', '$_POST[start_date]', '$_POST[end_date]', '$_POST[start_time]', '$_POST[end_time]', '1', '$_POST[description]', '0')";
@@ -16,16 +23,19 @@
     		die('Error: ' . mysqli_error($con));
     	}
         $now = date("Y-m-d H:i:s");
+
+        //insert into created_by
     	$sql = "INSERT INTO CREATED_BY (email, time_of_creation) VALUES ('$_SESSION[email]', '$now')";
 
         if (!mysqli_query($con, $sql)) {
             die('Error: ' . mysqli_error($con));
         }
-
+            header("Location: main.php");   //Redirects to main page
     }
-    	mysql_close($con);
+    mysql_close($con);
 ?>
 
+<html>
 <head>
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
   <link href="css/bootstrap.css" rel="stylesheet">
@@ -55,52 +65,51 @@
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                 <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav row">
-                    <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <b class=""></b></a>
-                    <ul class="dropdown-menu" style="">
-                      <li>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <form class="navbar-form navbar-left" role="search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search" />
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-primary" type="button">
-                                                Go!</button>
-                                        </span>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav row">
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <b class=""></b></a>
+                        <ul class="dropdown-menu" style="">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form class="navbar-form navbar-left" role="search">
+                                            <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search" />
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-primary" type="button">Go!</button>
+                                                </span>
+                                            </div>
+                                        </form>
                                     </div>
-                                    </form>
                                 </div>
-                            </div>
-                        </li>
-                        <br>
-                        <li>
-                          <a href="search.html">Advanced Search</a>
-                        </li>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="search.html">Advanced Search</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <?php  
+                        if($_SESSION["email"] != "") { //if logged in
+                            echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li>';
+                        }
+                        else { //if not logged in
+                            echo '<li><a href="login.php" class="btn-login login">Login</a> </li>';
+                        }
+                        if ($_SESSION["admin"] == "1") { //if admin
+                            echo '<li><a href="approve.php">Approve</a> </li>';
+                        }
+                    ?>
                     </ul>
-                </li>
-                <?php  
-                    if($_SESSION["email"] != "") {
-                        echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li>';
-                    }
-                    else {
-                        echo '<li><a href="login.php" class="btn-login login">Login</a> </li>';
-                    }
-                    if ($_SESSION["admin"] == "1") {
-                        echo '<li><a href="approve.php">Approve</a> </li>';
-                    }
-                ?>
-                </ul>
-            </div>
-                <!-- /.navbar-collapse -->
+                </div>
+                    <!-- /.navbar-collapse -->
             </div>
             <!-- /.container -->
         </nav>
     </div>
     <div class="container top" id="wrap">
-    	  <div class="row">
+    	<div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post" accept-charset="utf-8" class="form" role="form">   
                     <legend>Create Event</legend>
@@ -110,7 +119,7 @@
                                 <input type="text" name="event_name" value="" class="form-control input-lg" placeholder="Event Name" required/>
                             </div>
                             <div class="">
-                                <input type="text" name="location" value="" class="form-control input-lg" placeholder="Where?"  required/>
+                                <input type="text" name="location" value="" class="form-control input-lg" placeholder="Where?" required/>
                             </div>
                         </div>
                         <div>
@@ -134,9 +143,8 @@
                         </div>
                         <button class="btn  btn-primary " type="submit" name="submit">Submit Event</button>
                 </form>          
-              </div>
-            </div>            
-        </div>
+            </div>
+        </div>            
     </div>
 </body>
 </html>

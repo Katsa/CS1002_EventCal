@@ -1,6 +1,9 @@
-<?php session_start(); ?>
-<html>
-<?php   
+<?php session_start();
+
+if(!isset($_SESSION['admin']) || (isset($_SESSION['admin']) && $_SESSION['admin'] !== '1'))
+{
+   die('You cannot directly access this page!'); // kill the page display error
+}
     define('DB_SERVER', 'panther.cs.middlebury.edu');
     define('DB_USERNAME', 'jcepeda');
     define('DB_PASSWORD', 'ForRealThough');
@@ -48,7 +51,7 @@
         }    
     }
 
-    //create table
+    //get data for table
     $sql = "SELECT title, location, start_time, start_date, end_time, end_date, edit, description, eventid FROM Events WHERE waiting_for_approval = '1'";
 
     if (!mysqli_query($con, $sql)) {
@@ -59,6 +62,7 @@
     }
 ?>
 
+<html>
 <head>
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
   <link href="css/bootstrap.css" rel="stylesheet">
@@ -88,40 +92,39 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-             <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav row">
                     <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <b class=""></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <b class=""></b></a>
                     <ul class="dropdown-menu" style="">
-                      <li>
+                        <li>
                             <div class="row">
                                 <div class="col-md-12">
                                     <form class="navbar-form navbar-left" role="search">
-                                    <div class="input-group">
+                                        <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Search" />
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-primary" type="button">
-                                                Go!</button>
-                                        </span>
-                                    </div>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-primary" type="button">Go!</button>
+                                            </span>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </li>
                         <br>
                         <li>
-                          <a href="search.html">Advanced Search</a>
+                            <a href="search.html">Advanced Search</a>
                         </li>
                     </ul>
                 </li>
                 <?php  
-                    if($_SESSION["email"] != "") {
+                    if($_SESSION["email"] != "") { //if logged in
                         echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li>';
                     }
-                    else {
+                    else { //if not logged in
                         echo '<li><a href="login.php" class="btn-login login">Login</a> </li>';
                     }
-                    if ($_SESSION["admin"] == "1") {
+                    if ($_SESSION["admin"] == "1") { //if admin
                         echo '<li><a href="approve.php">Approve</a> </li>';
                     }
                 ?>
@@ -145,41 +148,45 @@
             <th class="text-center">Action</th>
         </tr>
     </thead>
-            <?php while($row = mysqli_fetch_array($result)) { 
-                $sql = "SELECT email, time_of_creation FROM CREATED_BY WHERE eventid = '$row[eventid]';";
+        <?php while($row = mysqli_fetch_array($result)) { //loop over each event
 
-                if (!mysqli_query($con, $sql)) {
-                    die('Error: ' . mysqli_error());
-                }
-                else {
-                    $created = mysqli_query($con, $sql);
-                    $createdi = mysqli_fetch_array($created);
-                }
-                $sql = "SELECT first_name, last_name FROM Users WHERE email = '$createdi[email]';";
-                if (!mysqli_query($con, $sql)) {
-                    die('Error: ' . mysqli_error());
-                }
-                else {
-                    $user = mysqli_query($con, $sql);
-                    $useri = mysqli_fetch_array($user);
-                }
-                ?>
-            <tr>
-                <td class = "title"> <?php echo "$row[title]"; ?> </td>
-                <td class = "title"> <?php echo "$row[location]"; ?> </td>
-                <td> <?php echo "$useri[first_name] $useri[last_name] <br> $createdi[email]"; ?> </td>
-                <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", "$row[start_time]"); ?> </td>
-                <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", "$row[end_time]"); ?> </td>
-                <td> <?php if ($row[edit] == 0) { echo "New Event"; } else { echo "Edit"; } ?>
-                <td class = "desc"> <?php echo "$row[description]"; ?> </td>
-                <td nowrap class="text-center">
-                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                        <button class='btn btn-info btn-xs' type="submit" value= <?php echo "1$row[eventid]" ?> name="id"><span class="glyphicon glyphicon-edit"></span> Approve</a>
-                        <button class="btn btn-danger btn-xs" type="submit" value= <?php echo "0$row[eventid]" ?> name="id"><span class="glyphicon glyphicon-remove"></span> Delete</a>
-                    </form>
-                </td>
-            </tr>
-            <?php } mysql_close($con); ?>
+            //get data from created_by
+            $sql = "SELECT email, time_of_creation FROM CREATED_BY WHERE eventid = '$row[eventid]';";
+
+            if (!mysqli_query($con, $sql)) {
+                die('Error: ' . mysqli_error());
+            }
+            else {
+                $created = mysqli_query($con, $sql);
+                $createdi = mysqli_fetch_array($created);
+            }
+
+            //get data from users
+            $sql = "SELECT first_name, last_name FROM Users WHERE email = '$createdi[email]';";
+            if (!mysqli_query($con, $sql)) {
+                die('Error: ' . mysqli_error());
+            }
+            else {
+                $user = mysqli_query($con, $sql);
+                $useri = mysqli_fetch_array($user);
+            }
+        ?>
+        <tr>
+            <td class = "title"> <?php echo "$row[title]"; ?> </td>
+            <td class = "title"> <?php echo "$row[location]"; ?> </td>
+            <td> <?php echo "$useri[first_name] $useri[last_name] <br> $createdi[email]"; ?> </td>
+            <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", "$row[start_time]"); ?> </td>
+            <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", "$row[end_time]"); ?> </td>
+            <td> <?php if ($row[edit] == 0) { echo "New Event"; } else { echo "Edit"; } ?>
+            <td class = "desc"> <?php echo "$row[description]"; ?> </td>
+            <td nowrap class="text-center">
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                    <button class='btn btn-info btn-xs' type="submit" value= <?php echo "1$row[eventid]" ?> name="id"><span class="glyphicon glyphicon-edit"></span> Approve</a>
+                    <button class="btn btn-danger btn-xs" type="submit" value= <?php echo "0$row[eventid]" ?> name="id"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                </form>
+            </td>
+        </tr>
+        <?php } mysql_close($con); ?>
     </table>
 </div>
 
