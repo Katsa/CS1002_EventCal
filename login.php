@@ -133,7 +133,7 @@
          <!-- /.container -->
       </nav>
       <div class="col-md-6 col-md-offset-3 top">
-         <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post" accept-charset="utf-8" class="form" role="form">   
+         <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" accept-charset="utf-8" class="form" role="form">   
             <legend>Login</legend>
             <div class="row">
                <div class="span4">
