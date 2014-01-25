@@ -43,24 +43,25 @@
 			$result = mysqli_query($con, $sql);
 			$row = mysqli_fetch_array($result);
 		}
-
-    if ($row[verified] = '0') {
-      echo "<br><br><br>Verify your account!";
-    }
-    else if($row[verified] = '1') {
-		  $fetchedpass = $row[password];
-		  $decrypted_txt = encrypt_decrypt('decrypt', $fetchedpass);
-   		if ($decrypted_txt == $password) {
-			 session_start();
-			 $_SESSION["email"] = $row[email];
-			 $_SESSION["name"] = $row[first_name] . " " . $row[last_name];
-			 $_SESSION["admin"] = $row[admin];
-        header("Location: main.php");   //Redirects to main page
-		  }
+		$fetchedpass = $row[password];
+	    $decrypted_txt = encrypt_decrypt('decrypt', $fetchedpass);
+   	    if ($decrypted_txt === $password) {
+            if ($row[verified] == '0') {
+                echo "<br><br><br>Verify your account!";
+            }
+			else {
+                session_start();
+		        $_SESSION["email"] = $row[email];
+		        $_SESSION["name"] = $row[first_name] . " " . $row[last_name];
+		        $_SESSION["admin"] = $row[admin];
+                header("Location: main.php");   //Redirects to main page
+		    }
+        }
 	    else { //fix placement
 			echo "<br><br><br>Login Failed";
-		  }
-	  }
+		}
+	}
+
 	mysql_close($con)
 
 ?>
