@@ -121,7 +121,7 @@
 </body>
 
 
-<!-- Script to check is passwords match -->
+<!-- Script to check is passwords match and email is middlebury -->
 <script language="javascript">
 function validate(form) {
 var e = form.elements;
