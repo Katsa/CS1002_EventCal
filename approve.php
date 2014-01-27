@@ -113,7 +113,7 @@ if(!isset($_SESSION['admin']) || (isset($_SESSION['admin']) && $_SESSION['admin'
                         </li>
                         <br>
                         <li>
-                            <a href="search.html">Advanced Search</a>
+                            <a href="search.php">Advanced Search</a>
                         </li>
                     </ul>
                 </li>
