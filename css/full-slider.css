@@ -36,19 +36,3 @@ footer {
 	margin-left:10%;
 	margin-right:10%;
 }
-
-.log {
-	left: 1850%;
-}
-
-.logout{
-	left:1320%;
-}
-
-.right{
-	text-align:right;
-}
-.rightx{
-	background-position: 100% .4em;
-	padding-right: .6em;
-}
