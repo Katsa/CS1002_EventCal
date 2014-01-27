@@ -119,7 +119,7 @@
                             </li>
                             <br>
                             <li>
-                              <a href="search.html">Advanced Search</a>
+                              <a href="search.php">Advanced Search</a>
                             </li>
                         </ul>
                     </li>
