@@ -122,11 +122,7 @@
                         </thead>
                             <?php
 
-<<<<<<< HEAD
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$now' AND '$now' <= end_date ORDER BY start_time ASC";
-=======
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date = '$now' ORDER BY start_time ASC";
->>>>>>> 64ae269b8151032d170ec1f284db2f7058ac1cf4
+                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$now' AND '$now' <= end_date ORDER BY start_time ASC";
                                 if (!mysqli_query($con, $sql)) {
                                     die('Error: ' . mysqli_error($con));
                                 }
@@ -169,11 +165,7 @@
                             <?php
 
                             $date = date('Y-m-d', strtotime('+1 day'));
-<<<<<<< HEAD
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_time ASC";
-=======
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date = '$date' ORDER BY start_time ASC";
->>>>>>> 64ae269b8151032d170ec1f284db2f7058ac1cf4
+                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_time ASC";
                                 if (!mysqli_query($con, $sql)) {
                                     die('Error: ' . mysqli_error($con));
                                 }
@@ -215,11 +207,7 @@
                             <?php
 
                             $date = date('Y-m-d', strtotime('+2 day'));
-<<<<<<< HEAD
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_time ASC";
-=======
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date = '$date' ORDER BY start_time ASC";
->>>>>>> 64ae269b8151032d170ec1f284db2f7058ac1cf4
+                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_time ASC";
                                 if (!mysqli_query($con, $sql)) {
                                     die('Error: ' . mysqli_error($con));
                                 }
@@ -261,11 +249,7 @@
                             <?php
 
                             $date = date('Y-m-d', strtotime('+3 day'));
-<<<<<<< HEAD
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_time ASC";
-=======
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date = '$date' ORDER BY start_time ASC";
->>>>>>> 64ae269b8151032d170ec1f284db2f7058ac1cf4
+                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_time ASC";
                                 if (!mysqli_query($con, $sql)) {
                                     die('Error: ' . mysqli_error($con));
                                 }
@@ -307,11 +291,7 @@
                             <?php
 
                             $date = date('Y-m-d', strtotime('4 day'));
-<<<<<<< HEAD
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_time ASC";
-=======
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date = '$date' ORDER BY start_time ASC";
->>>>>>> 64ae269b8151032d170ec1f284db2f7058ac1cf4
+                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_time ASC";
                                 if (!mysqli_query($con, $sql)) {
                                     die('Error: ' . mysqli_error($con));
                                 }
@@ -353,11 +333,7 @@
                             <?php
 
                             $date = date('Y-m-d', strtotime('+ day'));
-<<<<<<< HEAD
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_time ASC";
-=======
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date = '$date' ORDER BY start_time ASC";
->>>>>>> 64ae269b8151032d170ec1f284db2f7058ac1cf4
+                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_time ASC";
                                 if (!mysqli_query($con, $sql)) {
                                     die('Error: ' . mysqli_error($con));
                                 }
@@ -399,11 +375,7 @@
                             <?php
 
                             $date = date('Y-m-d', strtotime('+6 day'));
-<<<<<<< HEAD
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_time ASC";
-=======
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date = '$date' ORDER BY start_time ASC";
->>>>>>> 64ae269b8151032d170ec1f284db2f7058ac1cf4
+                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_time ASC";
                                 if (!mysqli_query($con, $sql)) {
                                     die('Error: ' . mysqli_error($con));
                                 }
