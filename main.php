@@ -27,6 +27,8 @@
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/full-slider.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/signupP.css" />
+
 
 </head>
 
@@ -108,7 +110,7 @@
                 </div>
                 <div class ="main">
                     <div class="container">
-                        <table class="table table-striped custab">
+                        <table class="table custab">
                         <thead>
                             <tr>
                                 <th>Title</th>
@@ -120,7 +122,7 @@
                         </thead>
                             <?php
 
-                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time FROM Events WHERE waiting_for_approval = '0' AND start_date = '$now' ORDER BY start_time ASC";
+                            $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date = '$now' ORDER BY start_time ASC";
                                 if (!mysqli_query($con, $sql)) {
                                     die('Error: ' . mysqli_error($con));
                                 }
@@ -130,12 +132,12 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr>
+                            <tr onclick="document.location = 'event_template.php/?id=<?php echo $row[eventid]?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php echo "$row[description]"; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -178,7 +180,7 @@
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php echo "$row[description]"; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -220,7 +222,7 @@
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php echo "$row[description]"; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -262,7 +264,7 @@
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php echo "$row[description]"; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -304,7 +306,7 @@
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php echo "$row[description]"; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -346,7 +348,7 @@
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php echo "$row[description]"; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -388,7 +390,7 @@
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php echo "$row[description]"; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -417,6 +419,9 @@
         interval: 0000 //changes the speed
     })
     </script>
+
+
+
 </body>
 
 </html>
