@@ -14,10 +14,16 @@
 
     if (isset($_POST[submit])) {//if form was submitted
 
-        //insert into events
+        //insert into events\
+        $start_date = date('Y-m-d', strtotime($_POST[start_date]));
+        $start_time = date('H:i:s', strtotime($_POST[start_time]));
+        $end_date = date('Y-m-d', strtotime($_POST[end_date]));
+        $end_time = date('H:i:s', strtotime($_POST[end_time]));
+
+
     	$sql = "INSERT INTO Events (title, location, start_date, end_date, start_time, end_time, waiting_for_approval, description, edit)
     	VALUES
-    	('$_POST[event_name]', '$_POST[location]', '$_POST[start_date]', '$_POST[end_date]', '$_POST[start_time]', '$_POST[end_time]', '1', '$_POST[description]', '0')";
+    	('$_POST[event_name]', '$_POST[location]', '$start_date', '$end_date', '$start_time', 'end_time', '1', '$_POST[description]', '0')";
 
     	if (!mysqli_query($con, $sql)) {
     		die('Error: ' . mysqli_error($con));
