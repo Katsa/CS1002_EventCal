@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    
+
 <?php include 'include/navbar.php'; ?>
 
     <div id="myCarousel" class="carousel slide">
@@ -69,12 +69,12 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id= <?php echo $row[eventid]; ?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 140) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -112,12 +112,12 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 140) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -154,12 +154,12 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 140) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -196,12 +196,12 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 140) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -238,12 +238,12 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 140) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -280,12 +280,12 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 140) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -322,12 +322,12 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='white';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[end_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[end_time])); ?> </td>
-                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 150) . "..."; echo $str; ?> </td>
+                                <td class = "desc"> <?php $str = $row[description]; if (strlen($str) > 140) $str = substr($str, 0, 140) . "..."; echo $str; ?> </td>
                             </tr>
                             <?php } ?>
 
@@ -345,19 +345,6 @@
             <span class="icon-next"></span>
         </a>
     </div>
-
-    <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
-
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 0000 //changes the speed
-    })
-    </script>
-
-
 
 </body>
 
