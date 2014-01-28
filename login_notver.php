@@ -96,39 +96,41 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                     <li><a href="create_event.html">Create an Event</a>
-                    </li>
+                <ul class="nav navbar-nav row">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <b class=""></b></a>
-                        <ul class="dropdown-menu" style="">
-                          <li>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <form class="navbar-form navbar-left" role="search">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <b class=""></b></a>
+                    <ul class="dropdown-menu" style="">
+                        <li>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form class="navbar-form navbar-left" role="search">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search" />
+                                        <input type="text" class="form-control" placeholder="Search" />
                                             <span class="input-group-btn">
-                                                <button class="btn btn-primary" type="button">
-                                                    Go!</button>
+                                                <button class="btn btn-primary" type="button">Go!</button>
                                             </span>
                                         </div>
-                                        </form>
-                                    </div>
+                                    </form>
                                 </div>
-                            </li>
-                            <br>
-                            <li>
-                              <a href="search.php">Advanced Search</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="login.html" class="btn-login login">Login</a>
-                    </li>
-                    <li>
-                        <a href="approve.php">Approve</a>
-                    </li>
+                            </div>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="search.php">Advanced Search</a>
+                        </li>
+                    </ul>
+                </li>
+                <?php  
+                    if($_SESSION["email"] != "") { //if logged in
+                        echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li>';
+                    }
+                    else { //if not logged in
+                        echo '<li><a href="login.php" class="btn-login login">Login</a> </li>';
+                    }
+                    if ($_SESSION["admin"] == "1") { //if admin
+                        echo '<li><a href="approve.php">Approve</a> </li>';
+                    }
+                ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -137,7 +139,7 @@
     </nav>
 
     <div class="col-md-6 col-md-offset-3 top">
-        <form action = "login.php" method="post" accept-charset="utf-8" class="form" role="form">   
+        <form action = "login_notver.php" method="post" accept-charset="utf-8" class="form" role="form">   
             <legend>Login Failed</legend>
                 <div class="error-border">
                     <div class="error-msg">
@@ -161,12 +163,12 @@
                     <br>
                     <div class="login-btn">
                         <div class="row">
-                            <button class="btn btn-primary" type="submit">Login</button>
+                            <button class="btn btn-primary" type="submit" name="submit">Login</button>
                             <a href="signup.php" class="btn btn-primary ">Sign Up</a>
                         </div>
                         <br>
                         <div class="forgot-pass">
-                            <a href="#" class"forgot_password">forgot password?</a>
+                            <a href="#" class"forgot_password">Forgot password?</a>
                         </div>
                     </div>
                 </div>
