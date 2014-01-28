@@ -69,7 +69,7 @@ function validate() {
                         echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li>';
                     }
                     else {
-                        echo '<li><a href="login.php" class="btn-login login">Login</a> </li>';
+                        echo '<li><a href="login.php" class="btn-login login">Login</a> </li> <li><a href="signup.php">Sign Up</a>';
                     }
                     if ($_SESSION["admin"] == "1") {
                         echo '<li><a href="approve.php">Approve</a> </li>';

@@ -68,7 +68,7 @@
                             echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li>';
                         }
                         else { //if not logged in
-                            echo '<li><a href="login.php" class="btn-login login">Login</a> </li>';
+                        echo '<li><a href="login.php" class="btn-login login">Login</a> </li> <li><a href="signup.php">Sign Up</a>';
                         }
                         if ($_SESSION["admin"] == "1") { //if admin
                             echo '<li><a href="approve.php">Approve</a> </li>';
@@ -81,6 +81,7 @@
             <!-- /.container -->
         </nav>
     </div>
+    
     <?php
     $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time FROM Events WHERE eventid='$_GET[id]'";
     if (!mysqli_query($con, $sql)) {
