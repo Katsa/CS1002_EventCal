@@ -56,9 +56,8 @@
             <h4>Description: </h4>
             <div class="descr"><?php echo "$data[description]";?></div>
         </div>
-        </div>
+    </div>
        
         
-    </div>
 </body>
 </html>
