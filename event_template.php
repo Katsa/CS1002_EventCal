@@ -98,19 +98,30 @@
 
 
         ?>
-    <legend class="top title"><?php echo "$data[title]";?></legend>
-    <div class="creator">
-        <h4>By: <?php echo "$creator[first_name]"?> <?php echo "$creator[last_name]"?></h4>
-    </div>
-    <div class="time">
-        <h4>Start Date: <?php echo "$data[start_date]";?> <?php echo "$data[start_time]";?></h4>
-        <h4>End Date: <?php echo "$data[end_date]";?> <?php echo "$data[date_time]";?></h4>
-    </div>
-    <div class ="location">
-        <h4>Location: <?php echo "$data[location]";?></h5>
-    </div>
-    <div class="desc">
-        <h4>Description: <?php echo "$data[description]";?></h4>
+    <div class="col-md-6 col-md-offset-3">
+        <div>
+            <legend class="top title"><?php echo "$data[title]";?></legend>
+            <a href="#" class="btn btn-primary ">Edit</a>
+            <div class="creator">
+                <h4>By: <?php echo "$creator[first_name]"?> <?php echo "$creator[last_name]"?></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="time col-xs-5">
+                <h4>Start Date: <?php $date = new DateTime($data[start_date]); echo date_format($date, 'F j, Y'); echo ", "; echo date("g:i a", strtotime($data[start_time])); ?></h4>
+                <h4>End Date: <?php $date = new DateTime($data[end_date]); echo date_format($date, 'F j, Y'); echo ", "; echo date("g:i a", strtotime($data[end_time])); ?></h4>  
+            </div>
+            <div class ="location">
+                <h4>Location: <?php echo "$data[location]";?></h5>
+            </div>
+        </div>
+        <div class="desc">
+            <h4>Description: </h4>
+            <div class="descr"><?php echo "$data[description]";?></div>
+        </div>
+        </div>
+       
+        
     </div>
 </body>
 </html>
