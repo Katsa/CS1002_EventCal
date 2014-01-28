@@ -20,7 +20,7 @@ function validate() {
 
 <br>
 
-<div class="container">
+<div class="container top">
   	<legend>Advanced Search</legend>
     	<div class="row">
       		<div class="col-md-6 col-md-offset-3">
