@@ -23,50 +23,50 @@
         return $output;
     }
 
-        $email = $_POST[email];
-        $password = $_POST[password];
+    $email = $_POST[email];
+    $password = $_POST[password];
 
-        define('DB_SERVER', 'panther.cs.middlebury.edu');
-        define('DB_USERNAME', 'jcepeda');
-        define('DB_PASSWORD', 'ForRealThough');
-        define('DB_DATABASE', 'jcepeda_middCal');
+    define('DB_SERVER', 'panther.cs.middlebury.edu');
+    define('DB_USERNAME', 'jcepeda');
+    define('DB_PASSWORD', 'ForRealThough');
+    define('DB_DATABASE', 'jcepeda_middCal');
                 
-        $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
+    $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
         
-        if (isset($_POST[submit])) {
-                $sql = "SELECT password, email, first_name, last_name, admin, verified FROM Users WHERE email = '$email';";
+    if (isset($_POST[submit])) {
+        $sql = "SELECT password, email, first_name, last_name, admin, verified FROM Users WHERE email = '$email';";
 
-                if (!mysqli_query($con, $sql)) {
-                        die('Error: ' . mysqli_error($con));
-                }
-                else {
-                        $result = mysqli_query($con, $sql);
-                        $row = mysqli_fetch_array($result);
-                }
-                $fetchedpass = $row[password];
-            $decrypted_txt = encrypt_decrypt('decrypt', $fetchedpass);
-               if ($decrypted_txt === $password) {
+        if (!mysqli_query($con, $sql)) {
+            die('Error: ' . mysqli_error($con));
+        }
+        else {
+            $result = mysqli_query($con, $sql);
+            $row = mysqli_fetch_array($result);
+        }
+        $fetchedpass = $row[password];
+        $decrypted_txt = encrypt_decrypt('decrypt', $fetchedpass);
+        if ($decrypted_txt === $password) {
             if ($row[verified] == '0') {
                 header("Location: login_notver.php");
             }
-                        else {
+            else {
                 session_start();
-                        $_SESSION["email"] = $row[email];
-                        $_SESSION["name"] = $row[first_name] . " " . $row[last_name];
-                        $_SESSION["admin"] = $row[admin];
+                $_SESSION["email"] = $row[email];
+                $_SESSION["name"] = $row[first_name] . " " . $row[last_name];
+                $_SESSION["admin"] = $row[admin];
                 header("Location: main.php");   //Redirects to main page
-                    }
+            }
         }
-            else { //fix placement
-                header("Location: login_failed.php");
-                }
+        else {
+            header("Location: login_failed.php");
         }
+    }
 
-        mysql_close($con)
+    mysql_close($con)
 
 ?>
 <html>
-        <head>
+  <head>
       <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
       <link href="css/bootstrap.css" rel="stylesheet">
       <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
@@ -116,7 +116,7 @@
                         </li>
                         <br>
                         <li>
-                            <a href="search.html">Advanced Search</a>
+                            <a href="search.php">Advanced Search</a>
                         </li>
                     </ul>
                 </li>
@@ -150,7 +150,7 @@
             </div>
             <br>
             <div>
-               <a href="#" class"forgot_password">forgot password?</a>
+               <a href="#" class"forgot_password">Forgot password?</a>
             </div>
             <br>
             <div class="row">

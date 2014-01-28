@@ -1,29 +1,24 @@
-<?php session_start();
-	define('DB_SERVER', 'panther.cs.middlebury.edu');
-	define('DB_USERNAME', 'jcepeda');
-	define('DB_PASSWORD', 'ForRealThough');
-	define('DB_DATABASE', 'jcepeda_middCal');
 
-	$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
-	mysql_close($con);
-?>                  
-<html>
+
 <head>
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-  <link href="css/bootstrap.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
-  <link rel="stylesheet" type="text/css" href="css/signupP.css" />
-  <link rel="stylesheet" type="text/css" href="css/search.css" />
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
-  <script type="text/javascript" src="js/sample.js"></script>
+    <title>MiddLife</title>
 
+    <!-- Bootstrap core CSS -->
+    <!-- Add custom CSS here -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    
+    <link href="css/full-slider.css" rel="stylesheet">
 
 </head>
+
 <body>
+
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -80,4 +75,4 @@
         <!-- /.container -->
     </nav>
 </body>
-<html>
+</html>
