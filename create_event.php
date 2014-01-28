@@ -23,7 +23,7 @@
 
     	$sql = "INSERT INTO Events (title, location, start_date, end_date, start_time, end_time, waiting_for_approval, description, edit)
     	VALUES
-    	('$_POST[event_name]', '$_POST[location]', '$start_date', '$end_date', '$start_time', 'end_time', '1', '$_POST[description]', '0')";
+    	('$_POST[event_name]', '$_POST[location]', '$start_date', '$end_date', '$start_time', '$end_time', '1', '$_POST[description]', '0')";
 
     	if (!mysqli_query($con, $sql)) {
     		die('Error: ' . mysqli_error($con));

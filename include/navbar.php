@@ -41,7 +41,7 @@ echo
                             echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li>';
                         }
                         else { //if not logged in
-                            echo '<li><a href="login.php" class="btn-login login">Login</a> </li> <li><a href="signup.php">Sign Up</a>';
+                            echo '<li><a href="login.php" class="btn-login login">Login</a> </li> <li><a href="signup.php">Sign Up</a></li>';
                         }
                         if ($_SESSION["admin"] == "1") { //if admin
                             echo '<li><a href="approve.php">Approve</a> </li>';
