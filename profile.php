@@ -67,6 +67,10 @@
             <div class="col-md-6 col-md-offset-3">
                 <form action="edit.php" method="post" accept-charset="utf-8" class="form" role="form">   <legend>Edit Profile</legend>
                     <h4></h4>
+                    <?php
+
+                        $sql = "SELECT first_name, last_name, email FROM Users WHERE " 
+                    ?>
                     <div class="row">
                         <div class="col-xs-6 col-md-6 row">
                             <h5 class="">First Name: George</h5>
