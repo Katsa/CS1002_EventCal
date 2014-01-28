@@ -103,4 +103,6 @@ legend{
   .forgot-pass {
     padding-bottom: 10px;
   }
-
+.my-tabs {
+  max-height: 40px;
+}
