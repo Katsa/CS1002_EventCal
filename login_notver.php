@@ -97,28 +97,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav row">
-                    <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <b class=""></b></a>
-                    <ul class="dropdown-menu" style="">
-                        <li>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <form class="navbar-form navbar-left" role="search">
-                                        <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search" />
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-primary" type="button">Go!</button>
-                                            </span>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </li>
-                        <br>
-                        <li>
-                            <a href="search.php">Advanced Search</a>
-                        </li>
-                    </ul>
+                <li>
+                    <a href="search.php">Search</a>
                 </li>
                 <?php  
                     if($_SESSION["email"] != "") { //if logged in
