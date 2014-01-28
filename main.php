@@ -103,6 +103,9 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
+                <div class="carousel-caption">
+                    <h1><?php echo date('l, F j, Y');?></h1>
+                </div>
                 <div class ="main">
                     <div class="container">
                         <table class="table table-striped custab">
@@ -142,6 +145,9 @@
                 </div>
             </div>
             <div class="item">
+                <div class="carousel-caption">
+                    <h1><?php echo date('l, F j, Y', strtotime('+1 day'));?></h1>
+                </div>
                 <div class ="main">
                     <div class="container">
                         <table class="table table-striped custab">
@@ -181,6 +187,9 @@
                 </div>
             </div>
             <div class="item">
+                <div class="carousel-caption">
+                    <h1><?php echo date('l, F j, Y', strtotime('+2 day'));?></h1>
+                </div>
                 <div class ="main">
                     <div class="container">
                         <table class="table table-striped custab">
@@ -220,6 +229,9 @@
                 </div>
             </div>
             <div class="item">
+                <div class="carousel-caption">
+                    <h1><?php echo date('l, F j, Y', strtotime('+3 day'));?></h1>
+                </div>
                 <div class ="main">
                     <div class="container">
                         <table class="table table-striped custab">
@@ -259,6 +271,9 @@
                 </div>
             </div>
             <div class="item">
+                <div class="carousel-caption">
+                    <h1><?php echo date('l, F j, Y', strtotime('+4 day'));?></h1>
+                </div>
                 <div class ="main">
                     <div class="container">
                         <table class="table table-striped custab">
@@ -298,6 +313,9 @@
                 </div>
             </div>
             <div class="item">
+                <div class="carousel-caption">
+                    <h1><?php echo date('l, F j, Y', strtotime('+5 day'));?></h1>
+                </div>
                 <div class ="main">
                     <div class="container">
                         <table class="table table-striped custab">
@@ -337,6 +355,9 @@
                 </div>
             </div>
             <div class="item">
+                <div class="carousel-caption">
+                    <h1><?php echo date('l, F j, Y', strtotime('+6 day'));?></h1>
+                </div>
                 <div class ="main">
                     <div class="container">
                         <table class="table table-striped custab">

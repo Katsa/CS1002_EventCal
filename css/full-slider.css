@@ -31,8 +31,8 @@ footer {
     text-align:right;
 }
 .main {
-	position:relative;
-	margin-top:50px;
-	margin-left:10%;
-	margin-right:10%;
+	position:absolute;
+	margin-top:100px;
+	margin-left:20%;
+	margin-right:20%;
 }
