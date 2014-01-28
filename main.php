@@ -45,7 +45,7 @@
                 <div class="carousel-caption">
                     <h1><?php echo date('l, F j, Y');?></h1>
                 </div>
-                <div style = "width:100%; height:100%; background-position:center; background-image:url(http://sga.middlebury.edu/storage/Vermont%20Autumn.jpg?__SQUARESPACE_CACHEVERSION=1346190366820); background-size:100%;">
+                <div class = "fill" style = "background-image:url(http://sga.middlebury.edu/storage/Vermont%20Autumn.jpg?__SQUARESPACE_CACHEVERSION=1346190366820);">
                 <div class ="main">
                     <div class="container">
                         <table class="table custab">
@@ -89,7 +89,7 @@
                 <div class="carousel-caption">
                     <h1><?php echo date('l, F j, Y', strtotime('+1 day'));?></h1>
                 </div>
-                <div style = "width:100%; height:100%; background-position:center; background-image:url(http://4.bp.blogspot.com/-v92B3iZ1MXg/UgzwAge-ThI/AAAAAAAADrY/wgfoLW3-uzE/s1600/IMG_0862.JPG); background-size:100%;">
+                <div class = "fill" style = "background-image:url(http://4.bp.blogspot.com/-v92B3iZ1MXg/UgzwAge-ThI/AAAAAAAADrY/wgfoLW3-uzE/s1600/IMG_0862.JPG);">
                 <div class ="main">
                     <div class="container">
                         <table class="table custab">
@@ -133,7 +133,7 @@
                 <div class="carousel-caption">
                     <h1><?php echo date('l, F j, Y', strtotime('+2 day'));?></h1>
                 </div>
-                <div style = "width:100%; height:100%; background-position:center; background-image:url(http://community.middlebury.edu/~rlange/images/background.jpg); background-size:100%;">
+                <div class = "fill" style = "background-image:url(http://community.middlebury.edu/~rlange/images/background.jpg);">
                 <div class ="main">
                     <div class="container">
                         <table class="table custab">
@@ -177,7 +177,7 @@
                 <div class="carousel-caption">
                     <h1><?php echo date('l, F j, Y', strtotime('+3 day'));?></h1>
                 </div>
-                <div style = "width:100%; height:100%; background-position:center; background-image:url(http://moon.com/wp-content/uploads/2013/09/ScenicAutumnDrive_snehit_123rf_1600.jpg); background-size:100%;">
+                <div class = "fill" style = "background-image:url(http://moon.com/wp-content/uploads/2013/09/ScenicAutumnDrive_snehit_123rf_1600.jpg);">
                 <div class ="main">
                     <div class="container">
                         <table class="table custab">
@@ -221,7 +221,7 @@
                 <div class="carousel-caption">
                     <h1><?php echo date('l, F j, Y', strtotime('+4 day'));?></h1>
                 </div>
-                <div style = "width:100%; height:100%; background-position:center; background-image:url(http://askhiba.files.wordpress.com/2008/08/bihall.jpg); background-size:100%;">
+                <div class = "fill" style = "background-image:url(http://askhiba.files.wordpress.com/2008/08/bihall.jpg);">
                 <div class ="main">
                     <div class="container">
                         <table class="table custab">
@@ -265,7 +265,7 @@
                 <div class="carousel-caption">
                     <h1><?php echo date('l, F j, Y', strtotime('+5 day'));?></h1>
                 </div>
-                <div style = "width:100%; height:100%; background-position:center; background-image:url(http://upload.wikimedia.org/wikipedia/commons/c/c9/Middlebury_VT_-_Middlebury_Falls.jpg); background-size:100%;">
+                <div class = "fill" style = "background-image:url(http://upload.wikimedia.org/wikipedia/commons/c/c9/Middlebury_VT_-_Middlebury_Falls.jpg);">
                 <div class ="main">
                     <div class="container">
                         <table class="table custab">
@@ -309,7 +309,7 @@
                 <div class="carousel-caption">
                     <h1><?php echo date('l, F j, Y', strtotime('+6 day'));?></h1>
                 </div>
-                <div style = "width:100%; height:100%; background-position:center; background-image:url(http://farm4.staticflickr.com/3582/3330264723_56d247ba0e_o.jpg); background-size:100%;">
+                <div class = "fill" style = "background-image:url(http://farm4.staticflickr.com/3582/3330264723_56d247ba0e_o.jpg);">
                 <div class ="main">
                     <div class="container">
                         <table class="table custab">
