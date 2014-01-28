@@ -18,21 +18,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>MiddLife</title>
-
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/full-slider.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/signupP.css" />
-
+<?php include 'include/header.php'; ?>
 
 </head>
 
 <body>
+<<<<<<< HEAD
 
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
@@ -69,6 +61,10 @@
         </div>
         <!-- /.container -->
     </nav>
+=======
+    
+<?php include 'include/navbar.php'; ?>
+>>>>>>> f548f9c2c87734b98562e017c2eacfd7e7eefbc0
 
     <div id="myCarousel" class="carousel slide">
         <!-- Indicators -->

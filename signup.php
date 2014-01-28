@@ -48,20 +48,11 @@
                     
 <html>
 <head>
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-  <link href="css/bootstrap.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
-  <link rel="stylesheet" type="text/css" href="css/signupP.css" />
-  <link rel="stylesheet" type="text/css" href="css/search.css" />
-  
 
-  <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
-  <script type="text/javascript" src="js/sample.js"></script>
-
+<?php include 'include/header.php'; ?>
 
 </head>
+
 <body>
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
@@ -99,7 +90,34 @@
         <!-- /.container -->
     </nav>
 </body>
+    
+<?php include 'include/navbar.php'; ?>
 
+<div class="container top" id="wrap">
+	  <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" accept-charset="utf-8" class="form" role="form" onsubmit ="return validate(this)">   <legend>Sign Up</legend>
+                    <h4></h4>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <input type="text" name="first_name" value="" class="form-control input-lg" placeholder="First Name"  />           
+                        </div>
+                        <div class="col-xs-6 col-md-6">
+                            <input type="text" name="last_name" value="" class="form-control input-lg" placeholder="Last Name"  />
+                        </div>
+                    </div>
+
+                    <input type="email" name="email" class="form-control input-lg" placeholder="Your Email" required/>
+                    <input type="password" name="password" class="form-control input-lg" placeholder="Password" required/>
+                    <input type="password" name="confirm" class="form-control input-lg" placeholder="Confirm Password" required/>
+                    <button class="btn btn-primary" type="submit" name = "submit">Create my account</button>
+            </form>          
+          </div>
+
+        </div>            
+    </div>
+</div>
+</body>
 
 <!-- Script to check is passwords match and email is middlebury -->
 <script language="javascript">
@@ -123,28 +141,4 @@ return true;
 
 </script>
 
-<div class="container top" id="wrap">
-	  <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" accept-charset="utf-8" class="form" role="form" onsubmit ="return validate(this)">   <legend>Sign Up</legend>
-                    <h4></h4>
-                    <div class="row">
-                        <div class="col-xs-6 col-md-6">
-                            <input type="text" name="first_name" value="" class="form-control input-lg" placeholder="First Name"  />           
-                        </div>
-                        <div class="col-xs-6 col-md-6">
-                            <input type="text" name="last_name" value="" class="form-control input-lg" placeholder="Last Name"  />
-                        </div>
-                    </div>
-
-                    <input type="email" name="email" class="form-control input-lg" placeholder="Your Email" required/>
-                    <input type="password" name="password" class="form-control input-lg" placeholder="Password" required/>
-                    <input type="password" name="confirm" class="form-control input-lg" placeholder="Confirm Password" required/>
-                    <button class="btn btn-primary" type="submit" name = "submit">Create my account</button>
-            </form>          
-          </div>
-
-</div>            
-</div>
-</div>
 <html>

@@ -117,6 +117,14 @@
         </div>
         <!-- /.container -->
     </nav>
+<head>
+<?php include 'include/header.php'; ?>
+
+</head>
+
+<body>
+    
+<?php include 'include/navbar.php'; ?>
 
     <div class="col-md-6 col-md-offset-3 top">
         <form action = "login_failed.php" method="post" accept-charset="utf-8" class="form" role="form">   

@@ -64,17 +64,8 @@ if(!isset($_SESSION['admin']) || (isset($_SESSION['admin']) && $_SESSION['admin'
 
 <html>
 <head>
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-  <link href="css/bootstrap.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
-  <link rel="stylesheet" type="text/css" href="css/signupP.css" />
-  <link rel="stylesheet" type="text/css" href="css/search.css" />
-  
 
-  <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
-  <script type="text/javascript" src="js/sample.js"></script>
+<?php include 'include/header.php'; ?>
 
 </head>
 
@@ -113,6 +104,9 @@ if(!isset($_SESSION['admin']) || (isset($_SESSION['admin']) && $_SESSION['admin'
             <!-- /.navbar-collapse -->
         </div>
     </nav>
+    
+<?php include 'include/navbar.php'; ?>
+
 <br><br><br>
     <div class="container">
     <table class="table table-striped custab">

@@ -66,33 +66,15 @@
 
 ?>
 <html>
-  <head>
-      <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-      <link href="css/bootstrap.css" rel="stylesheet">
-      <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
-      <link rel="stylesheet" type="text/css" href="css/signupP.css" />
-      <link rel="stylesheet" type="text/css" href="css/search.css" />
-      
+<head>
 
-      <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
-      <script type="text/javascript" src="js/bootstrap.js"></script>
-      <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
-      <script type="text/javascript" src="js/sample.js"></script>
+<?php include 'include/header.php'; ?>
 
-    </head>
-        <body>
+</head>
 
-                <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-         <div class="container">
-            <div class="navbar-header">
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-               </button>
-               <a class="navbar-brand" href="main.php">MiddLife</a>
-            </div>
+<body>
+    
+<?php include 'include/navbar.php'; ?>
 
            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -117,6 +99,7 @@
          </div>
          <!-- /.container -->
       </nav>
+
       <div class="col-md-6 col-md-offset-3 top">
          <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" accept-charset="utf-8" class="form" role="form">   
             <legend>Login</legend>
