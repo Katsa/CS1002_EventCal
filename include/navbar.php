@@ -30,6 +30,10 @@ echo
 echo                
                     '</ul>
                 </div>
+                <div class ="right">'; ?>
+            <?php if ($_SESSION["email"] != "") { echo "Welcome " . $_SESSION['name'] . "!"; }
+echo       
+                '</div>
             </div>
         </nav>
     </div>';

@@ -34,19 +34,19 @@
             header("Location: main.php");   //Redirects to main page
     }
     else {
-    $sql = "SELECT U.email FROM CREATED_BY C, Users U WHERE C.eventid ='$_GET[id]' AND C.email=U.email";
-    if (!mysqli_query($con, $sql)) {
-        die('Error: ' . mysqli_error($con));
-    }
-    else {
-        $result = mysqli_query($con, $sql);
-        $creator = mysqli_fetch_array($result);
-    }
+        $sql = "SELECT U.email FROM CREATED_BY C, Users U WHERE C.eventid ='$_GET[id]' AND C.email=U.email";
+        if (!mysqli_query($con, $sql)) {
+            die('Error: ' . mysqli_error($con));
+        }
+        else {
+            $result = mysqli_query($con, $sql);
+            $creator = mysqli_fetch_array($result);
+        }
 
-    if ($creator[email] !== $_SESSION['email']) 
-    {
-       die('You cannot directly access this page!'); // kill the page display error
-    }
+        if ($creator[email] != $_SESSION['email'] && $_SESSION['admin'] == '0') 
+        {
+           die('You cannot directly access this page!'); // kill the page display error
+        }
     }
 ?>
 

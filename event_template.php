@@ -40,8 +40,8 @@
             <legend class="top title"><?php echo "$data[title]";?></legend>
            
             <?php 
-                if ($creator[email] == $_SESSION['email']) {
-                    echo '<div> <a href="edit_event.php?id=' . $_GET[id] . '" class="btn btn-primary ">Edit</a> <a href="#" class="btn btn-danger ">Delete</a> </div>';
+                if ($creator[email] == $_SESSION['email'] || $_SESSION['admin'] == '1') {
+                    echo '<div> <a href="edit_event.php?id=' . $_GET[id] . '" class="btn btn-primary ">Edit</a> <a href="delete.php?id=' . $_GET[id] . '" class="btn btn-danger ">Delete</a> </div>';
                 }
             ?>
                
