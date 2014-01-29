@@ -52,6 +52,8 @@
 		}
 	}
 
+/* THIS REALLY NEEDS TO BE FIXED REALLY BADLY LIKE SUPER SAIYAN BAD */
+
 ?>
 
 <div class="container top">
