@@ -70,11 +70,11 @@ legend{
   }
   .login-info {
     padding-top: 10px;
-    margin-left: 180px;
+    /*margin-left: 180px;*/
   }
 
   .login-btn {
-    margin-left: 240px;
+    /*margin-left: 240px;*/
   }
 
   .error-border {
