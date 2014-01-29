@@ -2,7 +2,17 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <?php include 'include/header.php'; ?>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap-multiselect.css">
+      <link rel="stylesheet" type="text/css" href="css/signupP.css">
+      <link rel="stylesheet" type="text/css" href="css/search.css">
+      <link rel="stylesheet" type="text/css" href="css/full-slider.css">
+      
+
+      <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+      <script type="text/javascript" src="js/bootstrap.js"></script>
+      <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+      <script type="text/javascript" src="js/sample.js"></script>
 
 </head>
 
@@ -21,11 +31,11 @@ function validate() {
 <br>
 
 <div class="container top">
-  	<legend>Advanced Search</legend>
+  	<legend>Search</legend>
     	<div class="row">
       		<div class="col-md-6 col-md-offset-3">
         		<!-- Nav tabs category -->
-		        <ul class="nav nav-tabs faq-cat-tabs">
+		        <ul class="nav nav-tabs faq-cat-tabs my-tabs">
 		            <li class="active"><a href="#faq-cat-1" data-toggle="tab">By Creator</a></li>
 		            <li><a href="#faq-cat-2" data-toggle="tab">By Title</a></li>
 		            <li><a href="#faq-cat-3" data-toggle="tab">By Location</a></li>

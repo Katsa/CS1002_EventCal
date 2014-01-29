@@ -59,11 +59,11 @@
             </div>
         </div>
         <div class="desc">
-                <h4>Description: </h4>
-            <div class="descr"><?php echo "$data[description]";?>
-            </div>
+            <h4>Description: </h4>
+            <div class="descr"><?php echo "$data[description]";?></div>
         </div>
     </div>
+       
         
 </body>
 </html>

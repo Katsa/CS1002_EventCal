@@ -70,7 +70,7 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='teal';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
@@ -113,7 +113,7 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='teal';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
@@ -156,7 +156,7 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='teal';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
@@ -198,7 +198,7 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='teal';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
@@ -240,7 +240,7 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='teal';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
@@ -282,7 +282,7 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='teal';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
@@ -324,7 +324,7 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='gray';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='teal';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
