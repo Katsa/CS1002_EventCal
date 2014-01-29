@@ -44,11 +44,11 @@
         <div class="carousel-inner">
             <div class="item active">
                 <div class="carousel-caption">
-                    <h1><?php echo date('l, F j, Y');?></h1>
+                    <h1 class = "text"><?php echo date('l, F j, Y');?></h1>
                 </div>
                 <div class ="main">
                     <div class="container">
-                        <table class="table custab">
+                        <table class="table custab text">
                         <thead>
                             <tr>
                                 <th>Title</th>
@@ -70,7 +70,7 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='teal';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='black';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
@@ -86,11 +86,11 @@
             </div>
             <div class="item">
                 <div class="carousel-caption">
-                    <h1><?php echo date('l, F j, Y', strtotime('+1 day'));?></h1>
+                    <h1 class = "text"><?php echo date('l, F j, Y', strtotime('+1 day'));?></h1>
                 </div>
                 <div class ="main">
                     <div class="container">
-                        <table class="table custab">
+                        <table class="table custab text">
                         <thead>
                             <tr>
                                 <th>Title</th>
@@ -113,7 +113,7 @@
 
                             while($row = mysqli_fetch_array($result)) {
                             ?>
-                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='teal';this.style.cursor='pointer'">
+                            <tr onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';" onmouseout="this.style.background='';" onmouseover="this.style.background='black';this.style.cursor='pointer'">
                                 <td class = "title"> <?php echo "$row[title]"; ?> </td>
                                 <td class = "title"> <?php echo "$row[location]"; ?> </td>
                                 <td nowrap> <?php $date = new DateTime($row[start_date]); echo date_format($date, 'F j, Y'); echo "<br>"; echo date("g:i a", strtotime($row[start_time])); ?> </td>
@@ -129,11 +129,11 @@
             </>
             <div class="item">yle.background='white';" 
                 <div class="carousel-caption">
-                    <h1><?php echo date('l, F j, Y', strtotime('+2 day'));?></h1>
+                    <h1 class = "text"><?php echo date('l, F j, Y', strtotime('+2 day'));?></h1>
                 </div>
                 <div class ="main">
                     <div class="container">
-                        <table class="table custab">
+                        <table class="table custab text">
                         <thead>
                             <tr>
                                 <th>Title</th>
@@ -171,11 +171,11 @@
             </div>
             <div class="item">
                 <div class="carousel-caption">
-                    <h1><?php echo date('l, F j, Y', strtotime('+3 day'));?></h1>
+                    <h1 class = "text"><?php echo date('l, F j, Y', strtotime('+3 day'));?></h1>
                 </div>
                 <div class ="main">
                     <div class="container">
-                        <table class="table custab">
+                        <table class="table custab text">
                         <thead>
                             <tr>
                                 <th>Title</th>
@@ -213,11 +213,11 @@
             </div>
             <div class="item">
                 <div class="carousel-caption">
-                    <h1><?php echo date('l, F j, Y', strtotime('+4 day'));?></h1>
+                    <h1 class = "text"><?php echo date('l, F j, Y', strtotime('+4 day'));?></h1>
                 </div>
                 <div class ="main">
                     <div class="container">
-                        <table class="table custab">
+                        <table class="table custab text">
                         <thead>
                             <tr>
                                 <th>Title</th>
@@ -255,11 +255,11 @@
             </div>
             <div class="item">
                 <div class="carousel-caption">
-                    <h1><?php echo date('l, F j, Y', strtotime('+5 day'));?></h1>
+                    <h1 class = "text"><?php echo date('l, F j, Y', strtotime('+5 day'));?></h1>
                 </div>
                 <div class ="main">
                     <div class="container">
-                        <table class="table custab">
+                        <table class="table custab text">
                         <thead>
                             <tr>
                                 <th>Title</th>
@@ -297,11 +297,11 @@
             </div>
             <div class="item">
                 <div class="carousel-caption">
-                    <h1><?php echo date('l, F j, Y', strtotime('+6 day'));?></h1>
+                    <h1 class = "text"><?php echo date('l, F j, Y', strtotime('+6 day'));?></h1>
                 </div>
                 <div class ="main">
                     <div class="container">
-                        <table class="table custab">
+                        <table class="table custab text">
                         <thead>
                             <tr>
                                 <th>Title</th>
