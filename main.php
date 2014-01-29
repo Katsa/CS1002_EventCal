@@ -118,12 +118,7 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
             <div class="item">
-=======
-            
-            <div class="item">yle.background='white';" 
->>>>>>> c5801f8489061b96e11cb83338681f37295d39e8
                 <div class="carousel-caption">
                     <h1 class = "text date"><?php echo date('l, F j, Y', strtotime('+2 day'));?></h1>
                 </div>
