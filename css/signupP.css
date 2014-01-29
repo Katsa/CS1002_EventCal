@@ -103,6 +103,14 @@ legend{
   .forgot-pass {
     padding-bottom: 10px;
   }
-.my-tabs {
-  max-height: 40px;
-}
+  .my-tabs {
+    max-height: 40px;
+  }
+  .edit-prof {
+    font-size: 18px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+
+  }

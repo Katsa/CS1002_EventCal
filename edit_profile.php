@@ -38,27 +38,27 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <form action="edit.php" method="post" accept-charset="utf-8" class="form" role="form">   
-                    <legend>Profile</legend>
-                    <a class="btn btn-primary" href="edit_profile.php">Edit</a>
+                    <legend>Edit Profile</legend>
                     <h4></h4>
                     <div class="row">
-                        <div class="col-xs-6 col-md-6 row">
-                            <h4 class="">First Name: <?php echo "$data[first_name]";?></h4>
-                            <h4 class="first-name"></h4>   <!-- This is where the first name will go -->       
+                        <div class="col-md-6 row">
+                            <p class="edit-prof">First Name: 
+                            <input type="text" name="event_name" value="a<?php echo "$data[first_name]";?>" class=" input-sm"/>
+                            </p>       
                         </div>
-                        <div class="col-xs-6 col-md-6">
-                            <h4 class="last-name">Last Name: <?php echo "$data[last_name]";?></h4> <!-- This is where the last name will go -->
-                            <h4></h4>
+                        <div class="row">
+                        <div class="col-md-6 row">
+                            <p class="edit-prof">Last Name: 
+                            <input type="text" name="event_name" value="b<?php echo "$data[last_name]";?>" class=" input-sm"/>
+                            </p>       
                         </div>
-                        
-                        <br>
-                        <br>
-
-                        <h4>Email: <?php echo "$data[email]";?></h4>
-                        
+                    </div>
+                     
                         <br>
                         <h4>Events Created:  <?php echo "$events[eventid]";?></h4>
                         <br>
+                        <a href="profile.php" class="btn btn-primary btn-primary">Submit Changes</a> <!-- Does not save the edits -->
+                        <a href="#" class="btn btn-danger ">Delete</a>                               <!-- Does not delete the profile -->
                     </div>
                 </form>          
             </div>
