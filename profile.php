@@ -13,8 +13,9 @@
 
 <?php include 'include/header.php'; 
 
-    $sql = "SELECT first_name, last_name, email From Users Where email='$_GET[usr]'";
+    $sql = "SELECT first_name, last_name, email From Users Where email= '$_SESSION[email]'";
     $sql2 = "SELECT C.email, C.eventid FROM CREATED_BY C, Users U WHERE C.email = U.email";
+    $sql2 = "SELECT E.title FROM CREATED_BY C, Events E WHERE C.eventid = E.eventid AND C.email = '$_SESSION[email]'";
 
      if (!mysqli_query($con, $sql)) {
         die('Error: ' . mysqli_error($con));
@@ -24,7 +25,6 @@
         $result2 = mysqli_query($con, $sql2);
     }
     $data = mysqli_fetch_array($result);
-    $events = mysqli_fetch_array($result2);
 
     ?>
 
@@ -57,7 +57,9 @@
                         <h4>Email: <?php echo "$data[email]";?></h4>
                         
                         <br>
-                        <h4>Events Created:  <?php echo "$events[eventid]";?></h4>
+                        <h4>Events Created: <br> <?php while($row = mysqli_fetch_array($result2)) {
+                            echo "$row[title] <br>";
+                        }?></h4>
                         <br>
                     </div>
                 </form>          

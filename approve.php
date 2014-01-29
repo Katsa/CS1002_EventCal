@@ -74,8 +74,8 @@ if(!isset($_SESSION['admin']) || (isset($_SESSION['admin']) && $_SESSION['admin'
 <?php include 'include/navbar.php'; ?>
 
 <br><br><br>
-    <div class="container">
-    <table class="table table-striped custab">
+    <div>
+    <table class="table table-striped custab center">
     <thead>
         <tr>
             <th>Title</th>

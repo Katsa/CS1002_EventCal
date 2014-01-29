@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="css/signupP.css" />
     <link rel="stylesheet" type="text/css" href="css/search.css" />
+    <link rel="stylesheet" type="text/css" href="css/full-slider" />
   
 
     <script type="text/javascript" src="js/jquery-1.10.2.js"></script>

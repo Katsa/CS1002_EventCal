@@ -55,3 +55,8 @@ footer {
 	font-size: 14px;
 	color: rgb(153, 153, 153)
 }
+
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
