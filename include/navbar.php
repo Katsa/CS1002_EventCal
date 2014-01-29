@@ -15,11 +15,11 @@ echo
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav row">
                         <li class="dropdown">
-                        <a href="sample.php">Search</a>
+                        <a href="search.php">Search</a>
                         
                     </li>';
                         if($_SESSION["email"] != "") { //if logged in
-                            echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li>';
+                            echo '<li> <a href="create_event.php">Create an Event</a> </li> <li><a href = "logout.php">Logout</a></li><li> <a href="profile.php">Profile</a> </li>';
                         }
                         else { //if not logged in
                             echo '<li><a href="login.php" class="btn-login login">Login</a> </li> <li><a href="signup.php">Sign Up</a></li>';
