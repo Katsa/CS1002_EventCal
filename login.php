@@ -77,28 +77,38 @@
 <?php include 'include/navbar.php'; ?>
 
       <div class="col-md-6 col-md-offset-3 top">
-         <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" accept-charset="utf-8" class="form" role="form">   
+        <form action = "login_failed.php" method="post" accept-charset="utf-8" class="form" role="form">   
             <legend>Login</legend>
-            <div class="row">
-               <div class="span4">
-                  <input type="email" name="email" value="" class=" input-lg" placeholder="Email" required/>
-               </div>
-               <div class="">
-                  <input type="password" name="password" value="" class=" input-lg" placeholder="Password"  required/>
-               </div>
-            </div>
-            <br>
-            <div>
-               <a href="#" class"forgot_password">Forgot password?</a>
-            </div>
-            <br>
-            <div class="row">
-               <button class="btn btn-primary" type="submit" name="submit">Login</button>
-               <a href="signup.php" class="btn btn-primary ">Sign Up</a>
-            </div>
-         </form>          
-      </div>
-   </div>
+                <div class="">
+                    <div class="row login-info">
+                        <div class="span4">
+                            <input type="email" name="email" value="" class=" input-lg" placeholder="Email" required/>
+                        </div>
+                        <div class="">
+                            <input type="password" name="password" value="" class=" input-lg" placeholder="Password"  required/>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <div class="login-btn">
+                        <div class="row">
+                            <button class="btn btn-primary" type="submit" name= "submit">Login</button>
+                            <a href="signup.php" class="btn btn-primary ">Sign Up</a>
+                        </div>
+                        <br>
+                        <div class="forgot-pass">
+                            <a href="#" class"forgot_password">Forgot password?</a>
+                        </div>
+                    </div>
+                </div>
+            </form>          
+        </div>
+    </div> 
 
 </body>
 </html>
+
+
+
+
