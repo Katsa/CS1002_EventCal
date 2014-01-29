@@ -15,7 +15,7 @@ echo
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav row">
                         <li class="dropdown">
-                        <a href="sample.php">Search</a>
+                        <a href="search.php">Search</a>
                         
                     </li>';
                         if($_SESSION["email"] != "") { //if logged in
