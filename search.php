@@ -30,7 +30,7 @@
     <?php include 'include/navbar.php'; ?>
 
     <div class="container top">
-        <legend>Sample</legend>
+        <legend>Search</legend>
             <div class="row">
                 <div class="col-md-3 search-form steady">
                     <h3>Search by:</h3>
