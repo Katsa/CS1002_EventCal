@@ -46,9 +46,7 @@
                 </div>
                     <div class="col-md-9 row">
                         <div class="col-xs-6 col-md-6 row span4">
-                            <h4 > <?php echo "$data[first_name]";?></h4>
-                        
-                            <h4> <?php echo "$data[last_name]";?></h4> <!-- This is where the last name will go -->
+                            <h4 > <?php echo "$data[first_name] $data[last_name]";?></h4>
                                                
                         <br>
                         <br>
@@ -65,9 +63,11 @@
                                 </div>
                                 <div class="box-body">
                                     <div class"event-body" id="events">
+                                        <p onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';"onmouseover="this.style.cursor='pointer'">
                                     <?php while($row = mysqli_fetch_array($result2)) {
                                         echo "$row[title] <br>";
                                     }?>
+                                    </p>
                                     </div>
                                 </div>
                             </div>
