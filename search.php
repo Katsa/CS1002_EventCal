@@ -70,7 +70,7 @@
                 <div class="box-body">
                     <?php
                     while($row = mysqli_fetch_array($result)) { ?>
-                        <p onclick="document.location = 'event_template.php?id=<?php echo $row[eventid] ?>'" onmouseover="this.style.cursor='pointer'">
+                        <p onclick="document.location = 'event_template.php?id=<?php echo $row[eventid] ?>'" onmouseover="this.style.cursor='pointer'; this.style.background='black'" onmouseout="this.style.background='';">
                     <?php
                         echo "Name: " . $row[first_name] . " " . $row[last_name];
                         echo " Title: " . $row[title];

@@ -77,7 +77,7 @@
                     <input type="password" name="password" class="form-control input-lg" placeholder="Password" required/>
                     <input type="password" name="confirm" class="form-control input-lg" placeholder="Confirm Password" required/>
                     <div class="input-group at-midd">
-                        <input type="text" name="email" class="form-control input-lg" maxlength="20" placeholder="Email" required/>
+                        <input type="text" name="email" class="form-control input-lg" maxlength="25" placeholder="Email" required/>
                         <span class="input-group-addon">@middlebury.edu</span>
                     </div>
                     <button class="btn btn-primary " type="submit" name = "submit">Create my account</button>

@@ -49,7 +49,7 @@
                             <h4 > Last Name: <input type="text" name="event_name" value="<?php echo "$data[last_name]";?>" class=" input-sm"/></h4>
                                                
                             <br>
-                            <div><a href="#" class="btn btn-danger ">Delete</a> </div>
+                            <div><a href="delete_user.php?id=<?php echo $_SESSION[email]; ?>" class="btn btn-danger ">Delete</a> </div>
                             
                             <br>
                             
