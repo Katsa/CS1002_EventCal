@@ -58,16 +58,20 @@
                         <div class="form-group marg">
                             <input name = "tags" type="text" class="form-control" placeholder="tag1 tag2 tag3 tag4..." value = <?php echo $_GET['tags']; ?>>
                         </div>
-                        <button name = "search" type="submit" class="btn btn-primary">Search...</button>
+                        <div>
+                            <button name = "search" type="submit" class="btn btn-primary">Search...</button>
+                        </div>
                     </form>
             </div>
 
 
             <div class="col-md-6 col-md-offset-4 box">
                 <h3 class="box-header" id ="">Results:</h3>
-                <div class="box-body" onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';"onmouseover="this.style.cursor='pointer'; this.style.background='black'" onmouseout="this.style.background='';">
+                <div class="box-body">
                     <?php
-                    while($row = mysqli_fetch_array($result)) {
+                    while($row = mysqli_fetch_array($result)) { ?>
+                        <p onclick="document.location = 'event_template.php?id=<?php echo $row[eventid] ?>'" onmouseover="this.style.cursor='pointer'">
+                    <?php
                         echo "Name: " . $row[first_name] . " " . $row[last_name];
                         echo " Title: " . $row[title];
                         echo " Location: " . $row[location];
