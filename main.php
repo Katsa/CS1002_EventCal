@@ -18,7 +18,7 @@
 <body>
 
 <?php include 'include/navbar.php'; ?>
-<div class = "fill" style = "background-image:url(http://hdwallres.com/wp-content/uploads/2013/10/beach-goa-picture-wallpaper-hd-wallpaper.jpg);">
+<div class = "fill" style = "background-image:url(http://backgroundhdwallpaper.com/wp-content/uploads/2013/05/Cool-Backgrounds-Background-HD-Wallpaper.jpg);">
 
     <div id="myCarousel" class="carousel slide">
         <!-- Indicators -->
