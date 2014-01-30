@@ -57,8 +57,8 @@
     
 <?php include 'include/navbar.php'; ?>
 
-<div class="container top" id="wrap">
-	  <div class="row">
+<div class="col-md-6 col-md-offset-3 top">
+    <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" accept-charset="utf-8" class="form" role="form" onsubmit ="return validate(this)">   <legend>Sign Up</legend>
                     <h4></h4>
@@ -71,10 +71,16 @@
                         </div>
                     </div>
 
-                    <input type="email" name="email" class="form-control input-lg" placeholder="Your Email" required/>
+                    
+                    <!-- <input type="email" name="email" class="form-control input-lg" placeholder="Your Email" required/> -->
+
                     <input type="password" name="password" class="form-control input-lg" placeholder="Password" required/>
                     <input type="password" name="confirm" class="form-control input-lg" placeholder="Confirm Password" required/>
-                    <button class="btn btn-primary" type="submit" name = "submit">Create my account</button>
+                    <div class="input-group at-midd">
+                        <input type="text" name="email" class="form-control input-lg" maxlength="20" placeholder="Email" required/>
+                        <span class="input-group-addon">@middlebury.edu</span>
+                    </div>
+                    <button class="btn btn-primary " type="submit" name = "submit">Create my account</button>
             </form>          
           </div>
 

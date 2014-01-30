@@ -114,3 +114,7 @@ legend{
     color: inherit;
 
   }
+
+  .at-midd {
+    max-height: 20px!important;
+  }

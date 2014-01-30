@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-md-6 row">
                             <p class="edit-prof">First Name: 
-                            <input type="text" name="event_name" value="a<?php echo "$data[first_name]";?>" class=" input-sm"/>
+                            <input type="text" name="event_name" value="<?php echo "$data[first_name]";?>" class=" input-sm"/>
                             </p>       
                         </div>
                         <div class="row">
@@ -53,10 +53,11 @@
                             </p>       
                         </div>
                     </div>
-                     
-                        <br>
-                        <h4>Events Created:  <?php echo "$events[eventid]";?></h4>
-                        <br>
+                    <div>
+                        <a href="" class="btn btn-primary">Change Password</a>
+                        <a href="profile.php" class="btn btn-warning">Back</a>
+                    </div>
+                     <br>
                         <a href="profile.php" class="btn btn-primary btn-primary">Submit Changes</a> <!-- Does not save the edits -->
                         <a href="#" class="btn btn-danger ">Delete</a>                               <!-- Does not delete the profile -->
                     </div>
