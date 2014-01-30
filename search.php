@@ -65,7 +65,7 @@
 
             <div class="col-md-6 col-md-offset-4 box">
                 <h3 class="box-header" id ="">Results:</h3>
-                <div class="box-body" onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';"onmouseover="this.style.cursor='pointer'">
+                <div class="box-body" onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';"onmouseover="this.style.cursor='pointer'; this.style.background='black'" onmouseout="this.style.background='';">
                     <?php
                     while($row = mysqli_fetch_array($result)) {
                         echo "Name: " . $row[first_name] . " " . $row[last_name];
