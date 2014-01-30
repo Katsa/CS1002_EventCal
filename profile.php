@@ -65,9 +65,11 @@
                                 </div>
                                 <div class="box-body">
                                     <div class"event-body" id="events">
+                                        <p onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';"onmouseover="this.style.cursor='pointer'">
                                     <?php while($row = mysqli_fetch_array($result2)) {
                                         echo "$row[title] <br>";
                                     }?>
+                                    </p>
                                     </div>
                                 </div>
                             </div>
