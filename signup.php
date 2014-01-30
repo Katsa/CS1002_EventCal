@@ -57,7 +57,7 @@
     
 <?php include 'include/navbar.php'; ?>
 
-<div class="col-md-6 col-md-offset-3 top">
+<div class="col-md-6 col-md-offset-3 top2">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" accept-charset="utf-8" class="form" role="form" onsubmit ="return validate(this)">   <legend>Sign Up</legend>

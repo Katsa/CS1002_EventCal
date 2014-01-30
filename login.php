@@ -76,7 +76,7 @@
     
 <?php include 'include/navbar.php'; ?>
 
-      <div class="col-md-6 col-md-offset-3 top">
+      <div class="col-md-6 col-md-offset-3 top2">
         <form action = "login_failed.php" method="post" accept-charset="utf-8" class="form" role="form">   
             <legend>Login</legend>
                 <div class="">

@@ -52,7 +52,7 @@
     
 <?php include 'include/navbar.php'; ?>
 
-    <div class="container top" id="wrap">
+    <div class="container top2" id="wrap">
     	<div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" accept-charset="utf-8" class="form" role="form">   

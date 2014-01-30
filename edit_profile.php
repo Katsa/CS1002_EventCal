@@ -41,7 +41,6 @@
                 <form action="edit.php" method="post" accept-charset="utf-8" class="form" role="form">  
                     <div class= "row"> 
                         <legend>Edit Profile</legend>
-                        
                     </div>
                     <div class="col-md-9 row">
                         <div class="row span4">
@@ -49,7 +48,6 @@
                             <h4 > Last Name: <input type="text" name="event_name" value="<?php echo "$data[last_name]";?>" class=" input-sm"/></h4>
                                                
                             <br>
-                            <div><a href="delete_user.php?id=<?php echo $_SESSION[email]; ?>" class="btn btn-danger ">Delete</a> </div>                            
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">
                                   Delete
                                 </button>
@@ -67,7 +65,7 @@
                                     Are you sure you want to delete your account?
                                   </div>
                                   <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger">Delete</button>
+                                    <a href="delete_user.php?id=<?php echo $_SESSION[email]; ?>" class="btn btn-danger ">Delete</a>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                   </div>
                                 </div>
