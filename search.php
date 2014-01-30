@@ -58,7 +58,9 @@
                         <div class="form-group marg">
                             <input name = "tags" type="text" class="form-control" placeholder="tag1 tag2 tag3 tag4..." value = <?php echo $_GET['tags']; ?>>
                         </div>
-                        <button name = "search" type="submit" class="btn btn-primary">Search...</button>
+                        <div>
+                            <button name = "search" type="submit" class="btn btn-primary">Search...</button>
+                        </div>
                     </form>
             </div>
 
