@@ -34,7 +34,7 @@
         //encrypt the password
         $encrypted_txt = encrypt_decrypt('encrypt', $password);
         //$decrypted_txt = encrypt_decrypt('decrypt', $encrypted_txt);
-        $sql = "INSERT INTO Users (password, email, first_name, last_name, verified) VALUES ('$encrypted_txt', '$_POST[email]', '$_POST[first_name]', '$_POST[last_name]', '0')";
+        $sql = "INSERT INTO Users (password, email, first_name, last_name, verified) VALUES ('$encrypted_txt', '$_POST[email]', '$_POST[first_name]', '$_POST[last_name]', '1')";
         if (!mysqli_query($con, $sql)) {
             die('Error: ' . mysqli_error($con));
         }
@@ -77,8 +77,7 @@
                     <input type="password" name="password" class="form-control input-lg" placeholder="Password" required/>
                     <input type="password" name="confirm" class="form-control input-lg" placeholder="Confirm Password" required/>
                     <div class="input-group at-midd">
-                        <input type="text" name="email" class="form-control input-lg" maxlength="" placeholder="Email" required/>
-                        <span class="input-group-addon">@middlebury.edu</span>
+                        <input type="email" name="email" class="form-control input-lg" maxlength="" placeholder="Email" required/>
                     </div>
                     <button class="btn btn-primary " type="submit" name = "submit">Create my account</button>
             </form>          
