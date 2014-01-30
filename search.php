@@ -1,115 +1,81 @@
-<?php session_start(); ?>
+<?php session_start();
 
+    define('DB_SERVER', 'panther.cs.middlebury.edu');
+    define('DB_USERNAME', 'jcepeda');
+    define('DB_PASSWORD', 'ForRealThough');
+    define('DB_DATABASE', 'jcepeda_middCal');
+        
+    $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
+
+    if (isset($_GET[search])) {
+        $sql = "SELECT E.*, U.* FROM Events E, CREATED_BY C, Users U WHERE (U.first_name LIKE '%$_GET[creator]%' OR U.last_name LIKE '%$_GET[creator]%') AND (E.title LIKE '%$_GET[title]%') AND(E.location LIKE '%$_GET[location]%') AND (E.start_date LIKE '%$_GET[start_date]%') AND (E.tags LIKE '%$_GET[tags]%')AND U.email = C.email AND C.eventid = E.eventid";
+        if (!mysqli_query($con, $sql)) {
+            die('Error: ' . mysqli_error($con));
+        }
+        else {
+            $result = mysqli_query($con, $sql);
+        }
+    }
+ ?>
 <html>
 <head>
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="css/signupP.css" />
-    <link rel="stylesheet" type="text/css" href="css/search.css" />
-  
-
-    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
-    <script type="text/javascript" src="js/sample.js"></script>
-
-    <SCRIPT LANGUAGE="javascript">
-        function validate() {
-                fm = document.thisForm
-
-                //use validation here to make sure the user entered the information correctly
-                fm.submit()
-        }
-    </SCRIPT>
+   <?php 
+    include 'include/header.php'; 
+    ?>
+     <link rel="stylesheet" type="text/css" href="css/sample.css">
 
 </head>
 
 <body>
-    <?php include 'include/navbar.php'; 
+    <?php include 'include/navbar.php'; ?>
 
-/* THIS REALLY NEEDS TO BE FIXED REALLY BADLY LIKE SUPER SAIYAN BAD */
+    <div class="container top">
+        <legend>Sample</legend>
+            <div class="row">
+                <div class="col-md-3 search-form steady">
+                    <h3>Search by:</h3>
 
-?>
-
-<div class="container top">
-  <legend>Advanced Search</legend>
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <!-- Nav tabs category -->
-        <ul class="nav nav-tabs faq-cat-tabs">
-            <li class="active"><a href="#faq-cat-1" data-toggle="tab">By Creator</a></li>
-            <li><a hrfe="#faq-cat-2" data-toggle="tab">By Title</a></li>
-            <li><a href="#faq-cat-3" data-toggle="tab">By Location</a></li>
-            <li><a href="#faq-cat-4" data-toggle="tab">By Start Date</a></li>
-            <li><a href="#faq-cat-5" data-toggle="tab">By Tags</a></li>
-        </ul>
-
-        <!-- creator panel -->
-        <div class="tab-content faq-cat-content">
-            <div class="tab-pane active in fade" id="faq-cat-1">
-                <div class="panel-group" id="accordion-cat-1">
-                    <form class="navbar-form navbar-left" role="search" action="results.php">
-                        <div class="form-group">
-                            <input name = "creator" type="text" class="form-control" placeholder="Creator's Name...">
+                    <form name = "search" method = "GET" class="navbar-form navbar-left" role="search" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+                        <div class="form-group marg">
+                            <input name = "creator" type="text" class="form-control" placeholder="Creator's Name..." value = <?php echo $_GET['creator']; ?>>
                         </div>
-                        <button name ="search" type="submit" class="btn btn-primary">Search...</button>
-                    </form>
-                </div>
-            </div>
 
-                 <!-- title panel -->
-            <div class="tab-pane fade" id="faq-cat-2">
-                <div class="panel-group" id="accordion-cat-2">
-                    <form class="navbar-form navbar-left" role="search" action="results.php">
-                        <div class="form-group">
-                            <input name="title" type="text" class="form-control" placeholder="Event Title...">
+                        <br>
+
+                        <div class="form-group marg">
+                            <input name = "title" type="text" class="form-control" placeholder="Event's Title..." value = <?php echo $_GET['title']; ?>>
                         </div>
-                        <button type="submit" class="btn btn-primary">Search...</button>
+                        <br>
+
+                        <div class="form-group marg">
+                            <input name = "location" type="text" class="form-control" placeholder="Location of Event..." value = <?php echo $_GET['location']; ?>>
+                        </div>
+                        <br>
+                        <div class="form-group marg">
+                            <input name = "start_date" type="date" class="form-control" placeholder="yyyy-mm-dd" value = <?php echo $_GET['start_date']; ?>>
+                        </div>
+                        <br>   
+                        <div class="form-group marg">
+                            <input name = "tags" type="text" class="form-control" placeholder="tag1 tag2 tag3 tag4..." value = <?php echo $_GET['tags']; ?>>
+                        </div>
+                        <button name = "search" type="submit" class="btn btn-primary">Search...</button>
                     </form>
-                </div>
             </div>
 
 
-                <!-- location panel -->
-            <div class="tab-pane fade" id="faq-cat-3">
-                <div class="panel-group" id="accordion-cat-3">
-                    <form class="navbar-form navbar-left" role="search" action="results.php">
-                        <div class="form-group">
-                            <input name="location" type="text" class="form-control" placeholder="Location of Event...">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Search...</button>
-                    </form>
-                </div>
-            </div>
+            <div class="col-md-6 col-md-offset-4">
+                <h3>Results:</h3>
+                <?php
+            while($row = mysqli_fetch_array($result)) {
+                echo "Name: " . $row[first_name] . " " . $row[last_name];
+                echo " Title: " . $row[title];
+                echo " Location: " . $row[location];
+                echo " Start Date: " . $row[start_date];
+                echo " Tags: " . $row[tags];
+                echo "<br>";
+            }
 
-                <!-- start date panel -->
-            <div class="tab-pane fade" id="faq-cat-4">
-                <div class="panel-group" id="accordion-cat-4">
-                    <form class="navbar-form navbar-left" role="search" action="results.php">
-                        <div class="form-group">
-                            <input name="start_date" type="text" class="form-control" placeholder="yyyy-mm-dd">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Search...</button>
-                    </form>
-                </div>
-            </div>
-
-                <!-- tags panel -->
-            <div class="tab-pane fade" id="faq-cat-5">
-                <div class="panel-group" id="accordion-cat-5">
-                    <form class="navbar-form navbar-left" role="search" action="results.php">
-                        <div class="form-group">
-                            <input name="tags" type="text" class="form-control" placeholder="tag1 tag2 tag3 tag4...">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Search...</button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-
-
+            ?>
             </div>
         </div>
     </div>
