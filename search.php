@@ -63,19 +63,21 @@
             </div>
 
 
-            <div class="col-md-6 col-md-offset-4">
-                <h3>Results:</h3>
-                <?php
-            while($row = mysqli_fetch_array($result)) {
-                echo "Name: " . $row[first_name] . " " . $row[last_name];
-                echo " Title: " . $row[title];
-                echo " Location: " . $row[location];
-                echo " Start Date: " . $row[start_date];
-                echo " Tags: " . $row[tags];
-                echo "<br>";
-            }
+            <div class="col-md-6 col-md-offset-4 box">
+                <h3 class="box-header" id ="">Results:</h3>
+                <div class="box-body" onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';"onmouseover="this.style.cursor='pointer'">
+                    <?php
+                    while($row = mysqli_fetch_array($result)) {
+                        echo "Name: " . $row[first_name] . " " . $row[last_name];
+                        echo " Title: " . $row[title];
+                        echo " Location: " . $row[location];
+                        echo " Start Date: " . $row[start_date];
+                        echo " Tags: " . $row[tags];
+                        echo "<br>";
+                    }
 
-            ?>
+                    ?>
+                </div>
             </div>
         </div>
     </div>

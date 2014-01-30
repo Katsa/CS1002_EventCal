@@ -35,7 +35,7 @@
 
 
         ?>
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-6 col-md-offset-3 top">
         <div>
             <legend class="top title"><?php echo "$data[title]";?></legend>
            
