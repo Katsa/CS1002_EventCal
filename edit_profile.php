@@ -49,8 +49,31 @@
                             <h4 > Last Name: <input type="text" name="event_name" value="<?php echo "$data[last_name]";?>" class=" input-sm"/></h4>
                                                
                             <br>
-                            <div><a href="delete_user.php?id=<?php echo $_SESSION[email]; ?>" class="btn btn-danger ">Delete</a> </div>
-                            
+                            <div><a href="delete_user.php?id=<?php echo $_SESSION[email]; ?>" class="btn btn-danger ">Delete</a> </div>                            
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                                  Delete
+                                </button>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Warning!</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    Are you sure you want to delete your account?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
                             <br>
                             
                             <br>
