@@ -7,7 +7,7 @@
     $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die ("Could not connect");
 
     if (isset($_POST[creator])) {
-		$sql = "SELECT C.* FROM CREATED_BY C, Users U WHERE U.first_name LIKE '%$_POST[creator]%' OR U.last_name LIKE '%$GET[creator]%' AND U.email = C.email;";
+		$sql = "SELECT C.* FROM CREATED_BY C, Users U WHERE U.first_name LIKE '%$_POST[creator]%' OR U.last_name LIKE '%$GET[creator]%' AND U.email = C.email";
     }
     else if (isset($_POST[title])) {
     	$sql = "SELECT * FROM Events WHERE title LIKE '%$_POST[title]%';";
