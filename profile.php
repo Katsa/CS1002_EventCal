@@ -15,8 +15,7 @@
     include 'include/header.php'; 
 
     $sql = "SELECT first_name, last_name, email From Users Where email= '$_SESSION[email]'";
-    $sql2 = "SELECT C.email, C.eventid FROM CREATED_BY C, Users U WHERE C.email = U.email";
-    $sql2 = "SELECT E.title FROM CREATED_BY C, Events E WHERE C.eventid = E.eventid AND C.email = '$_SESSION[email]'";
+    $sql2 = "SELECT E.* FROM CREATED_BY C, Events E WHERE C.eventid = E.eventid AND C.email = '$_SESSION[email]'";
 
      if (!mysqli_query($con, $sql)) {
         die('Error: ' . mysqli_error($con));
@@ -63,10 +62,10 @@
                                 </div>
                                 <div class="box-body">
                                     <div class"event-body" id="events">
-                                        <p onclick="document.location = 'event_template.php?id=<?php echo $row[eventid]; ?>';"onmouseover="this.style.cursor='pointer'">
-                                    <?php while($row = mysqli_fetch_array($result2)) {
-                                        echo "$row[title] <br>";
-                                    }?>
+                                        <?php while ($row = mysqli_fetch_array($result2)) { ?>
+                                        <p onclick="document.location = 'event_template.php?id=<?php echo $row[eventid] ?>'" onmouseover="this.style.cursor='pointer'">
+                                        <?php echo $row[title]; ?><br>
+                                        <?php } ?>
                                     </p>
                                     </div>
                                 </div>
