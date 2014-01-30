@@ -262,7 +262,7 @@
                         </thead>
                             <?php
 
-                            $date = date('Y-m-d', strtotime('+ day'));
+                            $date = date('Y-m-d', strtotime('4 day'));
                             $sql = "SELECT title, location, start_date, end_date, description, start_time, end_time, eventid FROM Events WHERE waiting_for_approval = '0' AND start_date <= '$date' AND '$date' <= end_date ORDER BY start_date ASC, start_time ASC";
                                 if (!mysqli_query($con, $sql)) {
                                     die('Error: ' . mysqli_error($con));
