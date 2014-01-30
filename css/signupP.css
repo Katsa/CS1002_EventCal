@@ -55,6 +55,11 @@ legend{
   .top {
     margin-top:40px;
   }
+
+  .top2 {
+    margin-top:50px;
+  }
+  
   .desc {
     min-width:500px;
   }

@@ -65,19 +65,22 @@
             </div>
 
 
-            <div class="col-md-6 col-md-offset-4 box">
+            <div class="col-md-8 col-md-offset-4 box">
                 <h3 class="box-header" id ="">Results:</h3>
                 <div class="box-body">
                     <?php
                     while($row = mysqli_fetch_array($result)) { ?>
-                        <p onclick="document.location = 'event_template.php?id=<?php echo $row[eventid] ?>'" onmouseover="this.style.cursor='pointer'; this.style.background='black'" onmouseout="this.style.background='';">
+                    <ul>
+                        <h4><a href = "event_template.php?id=<?php echo $row[eventid]?>"><?php echo $row['title'] ?></a></h4>
+                        <p>
+                            <div>By: <?php echo $row[first_name] . " " . $row[last_name];?></div>
+                            <div>On <?php echo date('F j, Y \a\t g:i a', strtotime($row[start_date])) . " to " . date('F j, Y \a\t g:i a', strtotime($row['end_date'])) ?></div>
+                            <div>Tags: <?php echo $row[tags]?></div>
+                        </p>
+                        <br>
+                    </ul>
                     <?php
-                        echo "Name: " . $row[first_name] . " " . $row[last_name];
-                        echo " Title: " . $row[title];
-                        echo " Location: " . $row[location];
-                        echo " Start Date: " . $row[start_date];
-                        echo " Tags: " . $row[tags];
-                        echo "<br>";
+                        
                     }
 
                     ?>
