@@ -15,7 +15,7 @@
     <div class="container top">
         <legend>Sample</legend>
             <div class="row">
-                <div class="col-md-4 search-form">
+                <div class="col-md-4 search-form steady">
                     <h3>Search by:</h3>
 
                     <form class="navbar-form navbar-left" role="search" action="results.php">
@@ -52,6 +52,45 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Search...</button>
                     </form>
+            </div>
+            <div class="col-md-6 col-md-offset-4">
+                <h3>Results:</h3>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+                <p>kjhagsfdoiagshdahsdpashpd</p>
+
             </div>
         </div>
     </div>
